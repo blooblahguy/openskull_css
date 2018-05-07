@@ -8,5 +8,15 @@
 	$scss->setSourceMap(Compiler::SOURCE_MAP_INLINE);
 	$scss->setFormatter('Leafo\ScssPhp\Formatter\Compact');
 
-	echo $scss->compile('@import "openskull.scss";');
+	$data = $scss->compile('
+		@import "_variables";
+		@import "_reset";
+		@import "_typography";
+		@import "_helpers";
+		@import "_ui";
+		@import "_grid";
+	');
+	file_put_contents("openskull.css", $data);
+
+	include("openskull.css");
 ?>
