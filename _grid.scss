@@ -164,7 +164,7 @@
 // Small devices (landscape phones, 0px and up)
 .os-sm {-ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; max-width: 100%;}
 @media (max-width: 720px) {
-	.hidden-sm {display:none;}
+	.hidden-sm {display:none !important;}
 	.visible-sm {
 		&, &#{-block} {display:block;}
 		&#{-inline} {display:inline;}
@@ -176,7 +176,7 @@
 
 // Medium devices (tablets)
 @media (max-width: 1200px) and (min-width: 720px) {
-	.hidden-md {display:none;}
+	.hidden-md {display:none !important;}
 	.visible-md {
 		&, &#{-block} {display:block;}
 		&#{-inline} {display:inline;}
@@ -192,7 +192,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 1200px) {
 	.os-lg {-ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; max-width: 100%;}
-	.hidden-lg {display:none;}
+	.hidden-lg {display:none !important;}
 	.visible-lg {
 		&, &#{-block} {display:block;}
 		&#{-inline} {display:inline;}

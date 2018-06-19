@@ -17,12 +17,44 @@ $font_md: 15px;
 $font_sm: 0.9rem;
 $font_xs: 0.8rem;
 
-$h1: 2.2rem;
-$h2: 1.76rem;
-$h3: 1.405rem;
-$h4: 1.12rem;
-$h5: 1.0rem;
-$h6: 0.7rem;
+/////////////////////////
+// Typgraphy
+$h1: (
+	size: 2.2rem
+	, color: inherit
+	, spacing: 1px
+	, font-weight: inherit
+);
+$h2: (
+	size: 38px
+	, color: inherit
+	, spacing: 0px
+	, font-weight: 200
+);
+$h3: (
+	size: 1.405rem
+	, color: $gold
+	, spacing: 0px
+	, font-weight: inherit
+);
+$h4: (
+	size: 24px
+	, color: inherit
+	, spacing: 0px
+	, font-weight: inherit
+);
+$h5: (
+	size: 1.0rem
+	, color: inherit
+	, spacing: 0px
+	, font-weight: inherit
+);
+$h6: (
+	size: 0.7rem
+	, color: inherit
+	, spacing: 0px
+	, font-weight: inherit
+);
 
 // responsive sizing
 // gutters
