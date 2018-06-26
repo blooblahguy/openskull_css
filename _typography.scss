@@ -37,12 +37,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {margin:0; margin-bottom: $
 .h5, h5 {font-size: map-get($h5, size); color: map-get($h5, color); letter-spacing: map-get($h5, spacing); font-weight: map-get($h5, font-weight); }
 .h6, h6 {font-size: map-get($h6, size); color: map-get($h6, color); letter-spacing: map-get($h6, spacing); font-weight: map-get($h6, font-weight); }
 .title {font-weight:bold;}
-.subtitle {margin-top: -$gutter;}
 
-p {margin-top: 0; margin-bottom: $gutter * 2;}
-p:last-child {margin-bottom:0;}
+p {margin-top: 0; margin-bottom: $g2;}
 
-ul.list {list-style: disc outside;}
-ol.list {list-style: decimal outside;}
+ul {list-style: disc outside; padding-left: $g2;}
+ol {list-style: decimal outside; padding-left: $g2;}
 ol.nolist, ul.nolist {list-style:none;}
-ol.list, ul.list {padding-left: $gutter*2; margin-top: 0;}

@@ -1,47 +1,7 @@
 ////////////////////////////////////////////
 // UI Elements
 ////////////////////////////////////////////
-// Buttons
-.btn, button, input[type="submit"], input[type="button"] {
-	background: #fff; border:1px solid #ddd; padding: 8px 20px; cursor:pointer; display:inline-block; text-align:center; box-shadow:none; width:auto; margin-bottom:$g1;
-	&:hover {background:#e6e6e6; color:#333; border-color:#aaa;}
-	&.btn-primary {
-		color: #fff; background-color: $primary; border-color: darken($primary, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($primary, $hover_diff); border-color: $primary;}
-	}
-	&.btn-secondary {
-		color: #fff; background-color: $secondary; border-color: darken($secondary, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($secondary, $hover_diff); border-color: $secondary;}
-	}
-	&.btn-success {
-		color: #fff; background-color: $success; border-color: darken($success, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($success, $hover_diff); border-color: $success;}
-	}
-	&.btn-info {
-		color: #fff; background-color: $info; border-color: darken($info, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($info, $hover_diff); border-color: $info;}
-	}
-	&.btn-warning {
-		color: #fff; background-color: $warning; border-color: darken($warning, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($warning, $hover_diff); border-color: $warning;}
-	}
-	&.btn-dark {
-		color: #fff; background-color: $dark; border-color: darken($dark, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($dark, $hover_diff); border-color: $dark;}
-	}
-	&.btn-danger {
-		color: #fff; background-color: $danger; border-color: darken($danger, $hover_diff);
-		&:hover {color: #fff; background-color: lighten($danger, $hover_diff); border-color: $danger;}
-	}
-	&.btn-link {
-		border-color:transparent; background-color:transparent; box-shadow:none; color: $primary;
-		&:hover {color: darken($primary, $hover_diff); text-decoration: underline; background-color: transparent;}
-	}
 
-	&.btn-lg {font-size:18px;}
-	&.btn-sm {font-size:12px; padding: 6px 10px;}
-	&.btn-xs {font-size:10px; padding: 3px 6px;}
-}
 
 // Navigation
 .os-menu {
@@ -139,79 +99,44 @@ blockquote {border:none; border-left: 4px solid $primary; padding:$gutter*2; mar
 
 input[type="checkbox"], input[type="radio"] {width: auto; display: inline-block; position:relative; top: 2px; margin: 0 4px;}
 
-// text colors
-.text-primary {
-	color: $primary;
-	&a:hover, &a:focus {color: lighten($primary, $hover_diff);}
-}
-.text-success {
-	color: $success;
-	&a:hover, &a:focus {color: lighten($success, $hover_diff);}
-}
-.text-info {
-	color: $info;
-	&a:hover, &a:focus {color: lighten($info, $hover_diff);}
-}
-.text-warning {
-	color: $warning;
-	&a:hover, &a:focus {color: lighten($warning, $hover_diff);}
-}
-.text-danger {
-	color: $danger;
-	&a:hover, &a:focus {color: lighten($danger, $hover_diff);}
+// Buttons
+.btn, button, input[type="submit"], input[type="button"] {
+	background: #fff; border:1px solid #ddd; padding: 8px 20px; cursor:pointer; display:inline-block; text-align:center; box-shadow:none; width:auto; margin-bottom:$g1;
+	&:hover {background:#e6e6e6; color:#333; border-color:#aaa;}
+
+	@each $name, $color in $system_colors {
+		&.btn-#{$name} {
+			color: map-get($color, color); background-color: map-get($color, bg); border-color: darken(map-get($color, bg), $hover_diff);
+			&:hover {color: map-get($color, color); background-color: lighten(map-get($color, bg), $hover_diff); border-color: map-get($color, bg);}
+		}
+	}
+	
+	&.btn-link {
+		border-color:transparent; background-color:transparent; box-shadow:none; color: $primary;
+		&:hover {color: darken($primary, $hover_diff); text-decoration: underline; background-color: transparent;}
+	}
+
+	&.btn-lg {font-size:18px;}
+	&.btn-sm {font-size:12px; padding: 6px 10px;}
+	&.btn-xs {font-size:10px; padding: 3px 6px;}
 }
 
-// bg colors
-// messages
+// text colors
+@each $name, $color in $system_colors {
+	.text-#{$name} {
+		color: map-get($color, bg);
+		&a:hover, &a:focus {color: lighten(map-get($color, bg), $hover_diff);}
+	}
+}
+
+// backgrounds
 @each $name, $color in $system_colors {
 	.bg-#{$name} {
 		background-color: map-get($color, bg); color: map-get($color, color);
 		a {color: lighten(map-get($color, bg), 80%); }
-		&a:hover, &a:focus {background-color: map-get($color, bg);}
+		&a:hover, &a:focus {background-color: lighten(map-get($color, bg), $hover_diff);}
 	}
 }
-
-// .bg-primary {
-// 	background-color: $primary; color: $white; 
-// 	a {color: $white}
-// 	&a:hover, &a:focus {background-color: $primary;}
-// }
-// .bg-secondary {
-// 	background-color: $secondary; color: $white; 
-// 	&a:hover, &a:focus {background-color: lighten($secondary, $hover_diff);}
-// }
-// .bg-success {
-// 	background-color: $success; color: $white; 
-// 	&a:hover, &a:focus {background-color: lighten($success, $hover_diff);}
-// }
-// .bg-info {
-// 	background-color: $info;
-// 	&a:hover, &a:focus {background-color: lighten($info, $hover_diff);}
-// }
-// .bg-warning {
-// 	background-color: $warning;
-// 	&a:hover, &a:focus {background-color: lighten($warning, $hover_diff);}
-// }
-// .bg-danger {
-// 	background-color: $danger; color: $white;
-// 	&a:hover, &a:focus {background-color: lighten($danger, $hover_diff);}
-// }
-// .bg-dark {
-// 	background-color: $black; color: $white;
-// 	&a {color: $white;}
-// 	&a:hover, &a:focus {background-color: lighten($black, $hover_diff);}
-// }
-// .bg-grey {
-// 	background-color: $grey; color: $black;
-// 	&a {color: $black;}
-// 	&a:hover, &a:focus {background-color: lighten($white, $hover_diff);}
-// }
-
-// .bg-light, .bg-white {
-// 	background-color: $white; color: $black;
-// 	&a {color: $black;}
-// 	&a:hover, &a:focus {background-color: lighten($grey, $hover_diff);}
-// }
 
 .bg-none {background:none; color:inherit;}
 
