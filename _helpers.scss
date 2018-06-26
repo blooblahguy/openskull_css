@@ -3,7 +3,7 @@
 .pull-none {float:none;}
 .relative {position: relative;}
 .absolute {position: absolute;}
-.dbcenter {position: absolute; top: 50%; left: 50%; -o-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.dbcenter {position: absolute; top: 50%; left: 50%; @include prefix(transform, translate(-50%, -50%));}
 .fixed {
 	position:fixed;
 	&.t {top: 0;}
@@ -12,10 +12,16 @@
 	&.l {left: 0;}
 }
 
+.layer-background {z-index: map-get($layers, background);}
+.layer-normal {z-index: map-get($layers, normal);}
+.layer-medium {z-index: map-get($layers, medium);}
+.layer-high {z-index: map-get($layers, high);}
+.layer-tooltip {z-index: map-get($layers, tooltip);}
 .z10 {z-index:10;}
 .z20 {z-index:20;}
 .z30 {z-index:30;}
 .z40 {z-index:40;}
+
 .center {margin-left:auto; margin-right:auto;}
 .full, .width100 {width: 100%;}
 .block {display:block !important;}
