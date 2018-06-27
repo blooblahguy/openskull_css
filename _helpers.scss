@@ -1,16 +1,20 @@
 .pull-right {float:right;}
 .pull-left {float:left;}
 .pull-none {float:none;}
-.relative {position: relative;}
-.absolute {position: absolute;}
-.dbcenter {position: absolute; top: 50%; left: 50%; @include prefix(transform, translate(-50%, -50%));}
+.sticky {position: -webkit-sticky !important; position: sticky !important; top: 0px; }
+.relative {position: relative !important;}
+.absolute {position: absolute !important;}
+.db-center {position: absolute; top: 50%; left: 50%; @include prefix(transform, translate(-50%, -50%));}
 .fixed {
-	position:fixed;
+	position:fixed !important;
 	&.t {top: 0;}
 	&.r {right: 0;}
 	&.b {bottom: 0;}
 	&.l {left: 0;}
 }
+.noscroll, .overflow0 {overflow:hidden;}
+.scrolly {overflow-y:auto;}
+.scrollx {overflow-x:auto;}
 
 .layer-background {z-index: map-get($layers, background);}
 .layer-normal {z-index: map-get($layers, normal);}
@@ -29,3 +33,4 @@
 .clear {display:block; clear:both !important; float:none; width: 100%;}
 .noclear {clear:none !important;}
 .height100 {height: 100%;}
+.height100vh {height: 100vh;}

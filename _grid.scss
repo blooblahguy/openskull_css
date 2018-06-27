@@ -1,16 +1,16 @@
 
 // Grid containers
 .section {
-	padding: $gutter*4 0;
+	padding: $gutter*2 0;
 	&.g0 {padding:0;}
 	&.g2 {padding:$gutter*2 $gutter;}
 	&.g4 {padding:$gutter*4 $gutter*2;}
 }
-.container {
-	max-width: 1200px; margin-left: auto; margin-right:auto; width: 100%; padding-left: $g2; padding-right: $g2;
-	&.#{-fluid} {max-width: none;}
+.container, .container-fluid {
+	margin-left: auto; margin-right:auto; width: 100%; padding-left: $g2; padding-right: $g2;
 	&:after {content: ""; display:block; clear:both;}
 }
+.container {max-width: 800px;}
 
 // Row for flexboxing
 .row, .columns {
@@ -57,21 +57,21 @@
 
 	// grid
 	.os#{$name} {-ms-flex-preferred-size: 0; flex-basis: 0; -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; max-width: 100%; width: 100%; min-height: 20px;}
-	.g0 .os#{$name} {padding: 0;}
-	.g1 .os#{$name} {padding: $gutter;}
-	.g2 .os#{$name} {padding: $gutter*2;}
-	.g3 .os#{$name} {padding: $gutter*3;}
-	.g4 .os#{$name} {padding: $gutter*4;}
+	.g0 > .os#{$name} {padding: 0;}
+	.g1 > .os#{$name} {padding: $gutter;}
+	.g2 > .os#{$name} {padding: $gutter*2;}
+	.g3 > .os#{$name} {padding: $gutter*3;}
+	.g4 > .os#{$name} {padding: $gutter*4;}
 
 	@for $i from 1 through 12 {
 		.os#{$name}#{-$i} {max-width: (100% / 12) * $i; -ms-flex: 0 0 (100% / 12) * $i; flex: 0 0 (100% / 12) * $i; width: 100%; min-height: 20px; }
 		.offset#{$name}#{-$i} {margin-left: (100% / 12) * $i;}
 
-		.g0 .os#{$name}#{-$i} {padding: 0;}
-		.g1 .os#{$name}#{-$i} {padding: $gutter; }
-		.g2 .os#{$name}#{-$i} {padding: $gutter*2; }
-		.g3 .os#{$name}#{-$i} {padding: $gutter*3; }
-		.g4 .os#{$name}#{-$i} {padding: $gutter*4; }
+		.g0 > .os#{$name}#{-$i} {padding: 0;}
+		.g1 > .os#{$name}#{-$i} {padding: $gutter; }
+		.g2 > .os#{$name}#{-$i} {padding: $gutter*2; }
+		.g3 > .os#{$name}#{-$i} {padding: $gutter*3; }
+		.g4 > .os#{$name}#{-$i} {padding: $gutter*4; }
 	}
 
 	// Row aligning by size
