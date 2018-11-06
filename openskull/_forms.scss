@@ -1,0 +1,15 @@
+
+
+// INPUTS
+input, select, textarea {
+	-webkit-appearance: none; display:block; border-radius: 0; padding: $g1; width: 100%; border: 1px solid rgba($black, .25); transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; background-clip: padding-box; resize: vertical;
+	&:focus {border-color: $primary; outline: 0; box-shadow: 0 0 0 $g1/4 rgba($primary, .25); }
+}
+
+input[type="checkbox"], input[type="radio"] {vertical-align: bottom; width: auto; display: inline-block; position:relative; top: 2px; margin: 0 4px;}
+input[type="submit"] { margin-top: $g1; }
+
+label {
+	display:block;
+	span {color: $orange; margin: 0 4px;}
+}

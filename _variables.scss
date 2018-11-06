@@ -1,139 +1,118 @@
-$gutter: 0.75rem;
-$hover_diff: 5%; // how much something should change by when hovered
-$animation_speed: 0.3s;
+// Main spacing units
+$unit: 0.6;
+$padding: 0.6rem;
+
+/////////////////////////
+// Layout
+/////////////////////////
+$viewport-md: 48rem !default;
+$viewport-lg: 64rem !default;
+
+$g0: 0.001rem;
+$g1: $padding * 1;
+$g2: $padding * 2;
+$g3: $padding * 3;
+$g4: $padding * 4;
+
+$z-bg: -1;
+$z-low: 5;
+$z-medium: 10;
+$z-high: 20;
 
 /////////////////////////
 // Colors
 /////////////////////////
-$black: #333;
-$grey: #ddd;
-$white: #fefefe;
-$light: #F1F1F1;
+$black: #333 !default;
+$white: #fafafa !default;
+$grey: #888 !default;
+$light-grey: lighten($grey, 35%) !default;
+$dark-grey: darken($grey, 35%) !default;
 
-$primary: #337ab7;
-$secondary: #096;
-$tertiary: #096;
+$red: #e74c3c !default;
+$orange: #f39c12 !default;
+$blue: #3493d3 !default;
+$light-blue: lighten($blue, 10%) !default;
+$green: #22ac73 !default;
 
-$dark: #555;
-$dark_grey: #888;
-$success: #449d44;
-$info: #5bc0de;
-$warning: #f8b943;
-$danger: #d9534f;
+$primary: $blue !default;
+$secondary: $green !default;
+
+$link-color: $blue !default;
+
+$border-radius: 3px !default;
+$hover_diff: 5%;
+$animation_speed: 0.2s;
 
 // System
 $system_colors: (
-	primary: (bg:$primary,color:$white)
-	, secondary: (bg:$secondary,color:$white)
-	, tertiary: (bg:$tertiary,color:$white)
-	, success: (bg:$success,color:$white)
-	, info: (bg:$info,color:$black)
-	, message: (bg:$info,color:$black)
-	, warning: (bg:$warning,color:$black)
-	, danger: (bg:$danger,color:$white)
-	, error: (bg:$danger,color:$black)
-	, dark: (bg:$dark,color:$white)
-	, grey: (bg:$grey,color:$black)
-	, white: (bg:$white,color:$black)
-	, light: (bg:$light,color:$black)
-	, black: (bg:$black,color:$white)
+	primary: (bg: $primary, color: $white)
+	, secondary: (bg: $secondary, color: $white)
+	, success: (bg: $green, color: $white)
+	, info: (bg: $light-blue, color: $black)
+	, warning: (bg: $orange, color: $black)
+	, error: (bg: $red, color: $white)
+	, grey: (bg: $grey, color: $white)
+	, dark-grey: (bg: $dark-grey, color: $white)
+	, light-grey: (bg: $light-grey, color: $black)
+	, white: (bg: $white, color: $black)
+	, black: (bg: $black, color: $white)
 );
 
 /////////////////////////
 // Typgraphy
 /////////////////////////
-$links: (
-	color: $primary
-	, decoration: none
-	, hover: (
-		decoration: underline
-		, color: lighten($primary, $hover_diff)
-	)
-);
-
-$buttons: (
-	decoration: none
-	, radius: 0
-	, hover: (
-		decoration: none
-	)
-);
-
 $font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 
-$font_lg: 1.2rem;
-$font_md: 1rem;
-$font_sm: 0.8rem;
+$line-height: $unit * 3;
+
+$font-color: $black !default;
+
+$font-size: 15px !default;
+$font-size-md: 15px !default;
+$font-size-lg: 16px !default;
+
+$font-weight: 400 !default;
+$font-weight-extralight: 100 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: $font-weight !default;
+$font-weight-bold: 600 !default;
+$font-weight-extrabold: 800 !default;
 
 $h1: (
-	size: 2.2rem
+	size: 2.598rem
 	, color: inherit
-	, spacing: 1px
 	, font-weight: 500
 );
 $h2: (
-	size: 1.9rem
+	size: 2.127rem
 	, color: inherit
-	, spacing: 0px
 	, font-weight: 500
 );
 $h3: (
-	size: 1.6rem
+	size: 1.599rem
 	, color: "inherit"
-	, spacing: 0px
 	, font-weight: 500
 );
 $h4: (
-	size: 1.3rem
+	size: 1.414rem
 	, color: inherit
-	, spacing: 0px
 	, font-weight: 500
 );
 $h5: (
-	size: 1.0rem
+	size: 1.121rem
 	, color: inherit
-	, spacing: 0px
 	, font-weight: 500
 );
 $h6: (
-	size: 0.7rem
+	size: .88rem
 	, color: inherit
-	, spacing: 0px
 	, font-weight: 500
 );
 
-/////////////////////////
-// Layout
-/////////////////////////
-$breakpoints: ( // by min px
-	sm: 720px // max-width
-	, md: 720px // min width
-	, lg: 1200px // min width
-);
-
-$layers: (
-	background: -10
-	, normal: 0
-	, medium: 50
-	, high: 100
-	, tooltip: 200
-);
-
-$g1: $gutter;
-$g2: $gutter * 2;
-$g3: $gutter * 3;
-$g4: $gutter * 4;
-
-// functions
-@mixin prefix($prop, $val) { // EX: @include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
+// functions // EX: @include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
+@mixin prefix($prop, $val) {
 	@each $prefix in '-webkit-', '-moz-', '-ms-', '-o-', '' {
 		#{$prefix}#{$prop}: $val;
 	}
-}
-@function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
 }
