@@ -22,19 +22,13 @@
 					<label for="">Email Address <span>*</span></label>
 					<input type="email" placeholder="Email Address" name="email">
 				</div>
-				<div class="os-md-6 os-12">
+				<div class="os-md-4 os-12">
 					<label for="">Checkboxes</label>
 					<input type="checkbox"> Option 1
 					<input type="checkbox"> Option 2
 					<input type="checkbox"> Option 3
 				</div>
-				<div class="os-md-6 os-12">
-					<label for="">Radios</label>
-					<input type="radio" name="radiotest"> Option 1
-					<input type="radio" name="radiotest"> Option 2
-					<input type="radio" name="radiotest"> Option 3
-				</div>
-				<div class="os-md-6 os-12">
+				<div class="os-md-4 os-12">
 					<label for="">Select Box</label>
 					<select name="">
 						<option value="0">-- First Option</option>
@@ -43,15 +37,16 @@
 						<option value="">Option 3</option>
 					</select>
 				</div>
-			</div>
-			<div class="row g1 content-center">
-				<div class="os-md-6 self-center os-12">
-					<label for="">Full Message</label>
-					<textarea name="" rows="5" placeholder="Write what you want here"></textarea>
+				<div class="os-md-4 os-12">
+					<label for="">Radios</label>
+					<input type="radio" name="radiotest"> Option 1
+					<input type="radio" name="radiotest"> Option 2
+					<input type="radio" name="radiotest"> Option 3
 				</div>
+				
 			</div>
 		
-			<input type="submit" class="btn-primary">
+			<input type="button" class="btn-primary margt1" value="Submit">
 		</form>
 	</div>
 </div>

@@ -26,8 +26,8 @@ $black: #333 !default;
 $white: #fafafa !default;
 
 $grey: #ddd !default;
-$dark-grey: darken($grey, 55%) !default;
-$darkest-grey: darken($grey, 75%) !default;
+$silver: #888 !default;
+$dark: #555 !default;
 
 $red: #e74c3c !default;
 $orange: #f39c12 !default;
@@ -41,7 +41,7 @@ $secondary: $green !default;
 $link-color: $blue !default;
 
 $border-radius: 3px !default;
-$hover_diff: 5%;
+$hover_diff: 7%;
 $animation-speed: 0.1s;
 
 // System
@@ -55,7 +55,7 @@ $system_colors: (
 	, warning: (bg: $orange, color: $black)
 	, error: (bg: $red, color: $black)
 	, grey: (bg: $grey, color: $black)
-	, dark-grey: (bg: $dark-grey, color: $white)
+	, dark: (bg: $dark, color: $white)
 );
 
 /////////////////////////

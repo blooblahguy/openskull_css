@@ -1,7 +1,7 @@
 // Buttons
 %btn-base {
 	background: transparent; text-decoration:none; border: 2px solid $grey; border-radius: $border-radius; padding: $g1 $g2; cursor:pointer; text-align:center; box-shadow:none; display:inline-block;
-	&:hover, &:focus {text-decoration:none; background: $dark-grey; border-color: $darkest-grey;}
+	&:hover, &:focus {text-decoration:none; background: darken($white, $hover_diff); border-color: darken($grey, $hover_diff);}
 
 	&#{-btn-lg}, &.btn-lg {font-size: 1.303rem; padding: $g2 $g4; }
 	&#{-btn-sm}, &.btn-sm {font-size: .707rem; padding: $g1 /2 $g1; }
@@ -15,7 +15,7 @@
 	.btn-#{$name}, input.btn-#{$name} {
 		@extend %btn-base;
 		color: map-get($color, color); background: map-get($color, bg); border-color: darken(map-get($color, bg), $hover_diff);
-		&:hover {color: map-get($color, color); background-color: lighten(map-get($color, bg), $hover_diff); border-color: map-get($color, bg);}
+		&:hover, &:focus {color: map-get($color, color); background-color: lighten(map-get($color, bg), $hover_diff); border-color: map-get($color, bg);}
 	}
 }
 
