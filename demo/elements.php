@@ -6,6 +6,8 @@
 </div>
 <div class="section">
 	<div class="container">
+		<p class="message-warning">Work in progress documentation</p>
+		<h3>Tabs</h3>
 		<div class="tabs">
 			<div class="tab_nav">
 				<a tab="tabs">Tabs</a>
@@ -59,6 +61,8 @@
 				
 			</div>
 		</div>
+
+		<h3>Messages</h3>
 		
 		<div class="message-success">Message Success</div>
 		<div class="message-warning">Message Warning</div>

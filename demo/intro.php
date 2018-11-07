@@ -10,8 +10,8 @@
 		<div class="row g1 content-middle margb1">
 			<div class="os-md-3 os-sm-12 text-center">
 				<div class="row">
-					<div class="os-12 padb2"><a href="/openskull.css" download class="display-block btn-primary">Download CSS</a></div>
-					<div class="os-12"><a href="/openskull.js" download class="display-block btn-secondary">Download JS</a></div>
+					<div class="os-12 padb1"><a href="/openskull.css" download class="display-block btn-primary">Download Openskull <small class="em muted">35kb</small></a></div>
+					<!-- <div class="os-12"><a href="/openskull.js" download class="display-block btn-secondary">Download JS</a></div> -->
 				</div>
 			</div>
 			<div class="os">

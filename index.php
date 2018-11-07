@@ -16,6 +16,12 @@
 <div id="forms" class="anchor"></div>
 <? include("demo/forms.php");?>
 
+<div id="tables" class="anchor"></div>
+<? include("demo/tables.php");?>
+
+<div id="colors" class="anchor"></div>
+<? include("demo/colors.php");?>
+
 <div id="elements" class="anchor"></div>
 <? include("demo/elements.php");?>
 		

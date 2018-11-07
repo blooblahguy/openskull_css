@@ -59,11 +59,14 @@
 
 
 // TABLES
-table, thead, tbody {width: 100%; border-spacing: 0; border-collapse: collapse; max-width:100%;}
-table > thead {border-bottom: 1px solid $grey;}
+table, thead, tbody {width: 100%; border-spacing: 0; border-collapse: collapse; max-width:100%; margin-bottom:$g2;}
+table tr {border-bottom: 1px solid $grey;}
 table th { @extend .caps; @extend .text-left; @extend .h5; }
-
-table th, table td { padding: $g1/2; word-wrap: normal; line-height: 1; }
+table th, table td { padding: $g1; word-wrap: normal; line-height: 1; }
+table.odd tbody tr:nth-child(odd) {background: rgba($black, .04)}
+table.even tbody tr:nth-child(even) {background: rgba($black, .04)}
+table.bordered td {border:1px solid $grey;}
+table.noborder tr {border:none;}
 
 // MENUS
 .menu {

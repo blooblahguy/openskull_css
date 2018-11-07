@@ -16,6 +16,8 @@
 				<li><a href="#layout">Layout</a></li>
 				<li><a href="#type">Typography</a></li>
 				<li><a href="#forms">Forms</a></li>
+				<li><a href="#tables">Tables</a></li>
+				<li><a href="#colors">Colors</a></li>
 				<li><a href="#elements">Elements</a></li>
 			</ul>
 		</div>

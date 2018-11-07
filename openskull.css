@@ -248,7 +248,7 @@
 
  code,pre,samp { border-width:1px; clear:both; display:block; padding:0.6rem; font-size:0.808rem; tab-size:1.8rem; margin-bottom:-1px; }
 
- mark,.mark,.highlight { background:#f39c12; }
+ mark,.mark,.highlight { background:#f39c12; padding:0 0.3rem; }
 
  kbd,.kbd { display:inline-block; padding:2px 0.3rem 0; position:relative; top:-2px; font-size:0.707rem; color:#fafafa; background:#333; border-radius:3px; }
 
@@ -398,9 +398,15 @@
 
  .rounded { border-radius:3px; }
 
- input,select,textarea { -webkit-appearance:none; display:block; border-radius:0; padding:0.6rem; width:100%; background:#fff; border:1px solid rgba(51, 51, 51, .25); -webkit-transition:background 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -moz-transition:background 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -ms-transition:background 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -o-transition:background 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out; transition:background 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out; background-clip:padding-box; font-family:inherit; margin:0; }
+ input,select,textarea { -webkit-appearance:none; display:block; border-radius:0; padding:0.6rem; width:100%; background:#fff; border:1px solid rgba(51, 51, 51, .25); -webkit-transition:background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -moz-transition:background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -ms-transition:background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out; -o-transition:background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out; transition:background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out; background-clip:padding-box; font-family:inherit; margin:0; }
 
  input:focus,select:focus,textarea:focus { border-color:#3493d3; outline:0; box-shadow:0 0 0 0.15rem rgba(52, 147, 211, .25); }
+
+ input:invalid,select:invalid,textarea:invalid { border-left:4px solid #f39c12; color:#555; font-style:italic; }
+
+ input:invalid:focus,select:invalid:focus,textarea:invalid:focus,input:invalid:active,select:invalid:active,textarea:invalid:active { border-left:4px solid #e74c3c; }
+
+ input:required:not(:invalid),select:required:not(:invalid),textarea:required:not(:invalid) { border-left:4px solid #22ac73; }
 
  textarea { resize:vertical; }
 
@@ -426,9 +432,21 @@
 
  input[type="checkbox"]:focus,input[type="radio"]:focus { border-color:#22ac73; box-shadow:0 0 0 0.15rem rgba(34, 172, 115, .25); }
 
+ input[type="checkbox"]:invalid,input[type="radio"]:invalid { border-color:#f39c12; border-width:1px; }
+
+ input[type="checkbox"]:invalid:focus,input[type="radio"]:invalid:focus,input[type="checkbox"]:invalid:active,input[type="radio"]:invalid:active { border-color:#e74c3c; border-width:1px; }
+
+ input[type="checkbox"]:required:not(:invalid):focus,input[type="radio"]:required:not(:invalid):focus { border-width:1px; border-color:#22ac73; }
+
+ input[type="checkbox"]:required:not(:invalid),input[type="radio"]:required:not(:invalid) { border-width:1px; border-color:rgba(51, 51, 51, .25); }
+
  input[type="checkbox"]:checked,input[type="radio"]:checked { background:#22ac73; box-shadow:inset 0 0 0 2px #fafafa, inset 0 0 0 2px #fafafa; }
 
  input[type="submit"] { margin-top:0.6rem; }
+
+ option { color:#333; font-style:normal; }
+
+ option[disabled] { color:grey; font-style:normal; }
 
  label { display:block; }
 
@@ -480,11 +498,19 @@
 
  .modal .close:hover { opacity:1; }
 
- table,thead,tbody { width:100%; border-spacing:0; border-collapse:collapse; max-width:100%; }
+ table,thead,tbody { width:100%; border-spacing:0; border-collapse:collapse; max-width:100%; margin-bottom:1.2rem; }
 
- table > thead { border-bottom:1px solid #ddd; }
+ table tr { border-bottom:1px solid #ddd; }
 
- table th,table td { padding:0.3rem; word-wrap:normal; line-height:1; }
+ table th,table td { padding:0.6rem; word-wrap:normal; line-height:1; }
+
+ table.odd tbody tr:nth-child(odd) { background:rgba(51, 51, 51, .04); }
+
+ table.even tbody tr:nth-child(even) { background:rgba(51, 51, 51, .04); }
+
+ table.bordered td { border:1px solid #ddd; }
+
+ table.noborder tr { border:none; }
 
  .menu { list-style:none; padding:0; margin:0; }
 
