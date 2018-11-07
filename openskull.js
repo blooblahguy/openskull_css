@@ -93,7 +93,7 @@ function scrollSpy() {
 		var target = $(this).attr("href")
 		var point = $(target).offset().top;
 
-		if (point < top + topOff) {
+		if (point < top + topOff + 1) {
 			$(".jump_nav .active").removeClass("active")
 			$(this).parent().addClass("active")
 			
@@ -109,11 +109,11 @@ function scrollSpy() {
 		var target = $(this).attr("href")
 		var point = $(target).offset().top;
 
-		$("html,body").stop().animate({scrollTop: point - topOff + 1}, 400);
+		// $("html,body").stop().animate({scrollTop: point - topOff + 1}, 400);
 		// history.pushState(null, null, $(this).attr("href"));
 
-		e.preventDefault();
-		return false;
+		// e.preventDefault();
+		// return false;
 	})
 }
 scrollSpy();
