@@ -1,11 +1,11 @@
-<div class="bg-secondary pad2" id="type">
-	<div class="container-fluid">
+<div class="bg-black pad2">
+	<div class="container">
 		<h1>Typography</h1>
-		<div class="text-muted subtitle">Easy to read, consistent content is the most important part of every website.</div>
+		<p class="text-muted">Easy to read, consistent content is the most important part of every website.</p>
 	</div>
 </div>
 <div class="section">
-	<div class="container-fluid">
+	<div class="container">
 		<h2 id="type_header">Headers</h2>
 		<h1>Heading 1</h1>
 		<h2>Heading 2</h2>

@@ -1,16 +1,20 @@
 <? include("demo/header.php"); ?>
 
-<!-- Intro -->
+
+<div id="intro" class="padt1"></div>
 <? include("demo/intro.php"); ?>
 
-<!-- Grid -->
+<div id="grid" class="padt1"></div>
 <? include("demo/grid.php");?>
 
-<!-- Typography -->
+<div id="type" class="padt1"></div>
 <? include("demo/typography.php");?>
 
-<!-- UI Elements -->
-<? include("demo/ui.php");?>
+<div id="forms" class="padt1"></div>
+<? include("demo/forms.php");?>
+
+<div id="elements" class="padt1"></div>
+<? include("demo/elements.php");?>
 		
-<!-- Footer -->
+
 <? include("demo/footer.php"); ?>

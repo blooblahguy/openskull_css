@@ -24,9 +24,10 @@ $z-high: 20;
 /////////////////////////
 $black: #333 !default;
 $white: #fafafa !default;
-$grey: #888 !default;
-$light-grey: lighten($grey, 35%) !default;
-$dark-grey: darken($grey, 35%) !default;
+
+$grey: #ddd !default;
+$dark-grey: darken($grey, 55%) !default;
+$darkest-grey: darken($grey, 75%) !default;
 
 $red: #e74c3c !default;
 $orange: #f39c12 !default;
@@ -41,21 +42,20 @@ $link-color: $blue !default;
 
 $border-radius: 3px !default;
 $hover_diff: 5%;
-$animation_speed: 0.2s;
+$animation-speed: 0.1s;
 
 // System
 $system_colors: (
-	primary: (bg: $primary, color: $white)
+	black: (bg: $black, color: $white)
+	, white: (bg: $white, color: $black)
+	, primary: (bg: $primary, color: $white)
 	, secondary: (bg: $secondary, color: $white)
-	, success: (bg: $green, color: $white)
+	, success: (bg: $green, color: $black)
 	, info: (bg: $light-blue, color: $black)
 	, warning: (bg: $orange, color: $black)
-	, error: (bg: $red, color: $white)
-	, grey: (bg: $grey, color: $white)
+	, error: (bg: $red, color: $black)
+	, grey: (bg: $grey, color: $black)
 	, dark-grey: (bg: $dark-grey, color: $white)
-	, light-grey: (bg: $light-grey, color: $black)
-	, white: (bg: $white, color: $black)
-	, black: (bg: $black, color: $white)
 );
 
 /////////////////////////

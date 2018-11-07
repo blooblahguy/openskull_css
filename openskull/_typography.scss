@@ -21,10 +21,10 @@ small {font-size: .707rem;}
 .muted {opacity:0.7;}
 
 // Text defaults
-code, kbd, pre, samp, pre.prettify {clear:both; background: $light-grey; font-family: $font-family-monospace; display:block; padding: $g1;}
+code, kbd, pre, samp {clear:both; background: $grey; font-family: $font-family-monospace; display:block; padding: $g1; font-size: 0.808rem; tab-size: $g3;}
 pre > code {display: block; padding: 0; white-space: pre; background:none;}
 mark, .mark, .highlight {background: $orange}
-kbd, .kbd {padding: 0.375rem; font-size: .707rem; color: $white; background: $black; border-radius: $border-radius;}
+kbd, .kbd {display:inline-block; padding: 2px $g1/2 0; position: relative; top: -2px; font-size: .707rem; color: $white; background: $black; border-radius: $border-radius;}
 
 sub, sup {font-size: .707rem; line-height: 0; position: relative; vertical-align: baseline; }
 sup {top: -0.5rem;}
@@ -39,7 +39,7 @@ a {color:$link-color; text-decoration: none; }
 a:active, a:hover, a:focus {outline: 0; color: darken($link-color, $hover_diff);}
 
 // HEADERS
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {margin: $g2 0 $g1;}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {margin: 0;}
 .h1, h1 {font-size: map-get($h1, size); color: map-get($h1, color); font-weight: map-get($h1, font-weight); }
 .h2, h2 {font-size: map-get($h2, size); color: map-get($h2, color); font-weight: map-get($h2, font-weight); }
 .h3, h3 {font-size: map-get($h3, size); color: map-get($h3, color); font-weight: map-get($h3, font-weight); }
@@ -49,8 +49,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {margin: $g2 0 $g1;}
 
 // CONTENT
 p {font-size:1rem; margin: 0; margin-bottom: $g2;}
-p:nth-last-child(1) {margin-bottom:0;}
+p:nth-last-child(1) {margin-bottom: $g1;}
 blockquote {border:none; border-left: 4px solid $primary; padding: $g2; margin: 0; margin-bottom: $g1;}
-ul {list-style: disc outside; padding: 0 0 $g2 $g2;}
-ol {list-style: decimal outside; padding: 0 0 $g2 $g2;}
+ul {list-style: disc outside; padding: $g2 0 $g4 $g4;}
+ol {list-style: decimal outside; padding: $g2 0 $g4 $g4;}
 ol.nolist, ul.nolist {list-style:none;}

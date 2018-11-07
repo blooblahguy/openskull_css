@@ -21,9 +21,6 @@
 }
 
 // Flex element ordering
-.self-start, .self-top {-ms-flex-item-align: start; align-self: flex-start;}
-.self-center, .self-middle {-ms-flex-item-align: center; align-self: center;}
-.self-end, .self-bottom {-ms-flex-item-align: end; align-self: flex-end;}
 .order-first { -webkit-box-ordinal-group: 0; -ms-flex-order: -1; order: -1;}
 @for $i from 1 through 12 {
 	.order-#{$i} {-webkit-box-ordinal-group: $i + 1; -ms-flex-order: $i; order: $i;}

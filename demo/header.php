@@ -8,18 +8,15 @@
 </head>
 <body>
 	<div class="wrapper">
+
 		<div class="header_outer bg-black fixed t l r">
-			<div class="header container">
-				<div class="row g2 content-middle">
-					<a href="/" class="logo os-2 strong sm-text-center md-text-center">Openskull Framework</a>
-					<div class="os search form-sm">
-						<input type="text" class="filter" placeholder="search">
-					</div>
-					<div class="os-2 hidden-sm socials">
-						
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
+			<ul class="jump_nav container menu">
+				<li><a href="#intro" class="text-primary">Openskull</a></li>
+				<li><a href="#grid">Grid &amp; Layout</a></li>
+				<li><a href="#type">Type</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#elements">Elements</a></li>
+			</ul>
 		</div>
-		<div class="main_content" style="padding-top: 75px">
+		
+		<div class="main_content" style="padding-top: 45px">

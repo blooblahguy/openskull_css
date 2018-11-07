@@ -1,7 +1,7 @@
 // Borders
 %border {
 	border-style: solid;
-	border-color: $light-grey;
+	border-color: $grey;
 }
 .bord {
 	@extend %border;

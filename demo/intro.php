@@ -1,5 +1,5 @@
-<div class="section" id="intro">
-	<div class="container-fluid">
+<div class="section">
+	<div class="container">
 		<h1><strong>Openskull CSS Framework</strong></h1>
 		<h2 class="subtitle">You shouldn't have to fight against your CSS framework.</h2>
 		<p>Many popular CSS frameworks apply borders, font styles, border-radius, shadows, and more to their classes. This looks more pleasant out of the box, but it costs time and frustration when developers have to spend time "unstyling" the element.</p>
@@ -15,9 +15,8 @@
 			</div>
 			<div class="os">
 				<p>This framework strives to set itself apart by being more lightweight than its alternatives without sacrificing useful functionality. Openskull.css tries to follow some of the standards that major libraries such as bootstrap have set forward, and developers who've used them will probably openskull.css familiar.</p>
-				<p><em>This page was built entirely with openskull.css. There are no additional demo css rules.</em></p>
 			</div>
 		</div>
-		<p class="message-info">This website is still very much a work in progress, as is the framework.</p>
+		<p class="message-info">This page was built entirely with openskull.css. There are no additional demo css rules.</p>
 	</div>
 </div>

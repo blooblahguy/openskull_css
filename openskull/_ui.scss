@@ -19,12 +19,12 @@
 
 .tabs {
 	.tab_nav {
-		overflow:hidden; font-size:0;
+		overflow:hidden; font-size:0; list-style:none; margin-bottom: -1px;
+		li {display:inline-block;}
 		a {
-			font-size: 1rem; border-bottom: 4px solid transparent; margin-bottom: -1px; cursor:pointer; color:$black; display:inline-block; padding: $g1 $g2;
-			&:hover {background: $light-grey; text-decoration:none; border-color: $grey;}
-			&:active, &.active {border-color: $primary; color:$black;}
-			
+			font-size: 1rem; border-bottom: 4px solid transparent; cursor:pointer; color:$black; display:inline-block; padding: $g1 $g2;
+			&:hover {background: $grey; text-decoration:none; border-color: $grey;}
+			&:active, &:focus, &.active {border-color: $primary; color:$black;}
 		}
 		a + a {margin-left: $g1;}
 	}
@@ -60,7 +60,25 @@
 
 // TABLES
 table, thead, tbody {width: 100%; border-spacing: 0; border-collapse: collapse; max-width:100%;}
-table > thead {border-bottom: 1px solid $light-grey;}
+table > thead {border-bottom: 1px solid $grey;}
 table th { @extend .caps; @extend .text-left; @extend .h5; }
 
 table th, table td { padding: $g1/2; word-wrap: normal; line-height: 1; }
+
+// MENUS
+.menu {
+	list-style: none; padding: 0; margin: 0;
+	li {
+		display:inline-block; position: relative; 
+		& > a {display:block; padding: $g1 $g2; border-bottom:4px solid transparent; }
+		li:active > a, li.active > a, li:focus > a {border-color: $primary;}
+		&:hover > .sub-menu {display:block;}
+	}
+	
+	.sub-menu {
+		display:none; padding:0; position: absolute; top: 100%; left: 50%; @include prefix(transform, translateX(-50%)); width: 200px; max-width: 80vw; z-index: $z-high; background: inherit; background: $grey;
+		li {display:block;}
+		li:hover {background: rgba($black, .25)}
+		a {display:block; padding: $g1 $g2;}
+	}
+}
