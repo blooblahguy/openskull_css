@@ -23,8 +23,3 @@ body {background: $white; -webkit-font-smoothing: antialiased !important; -moz-o
 // limit objects to document size
 img, canvas, iframe, video, svg, select, textarea {max-width: 100%;}
 svg:not(:root) {overflow: hidden;}
-
-// media object fix
-.media { display: flex; align-items: flex-start; }
-.media .media-figure { margin-right: 1em; }
-.media .media-body { flex: 1 0 0; }

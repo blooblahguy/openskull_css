@@ -16,8 +16,6 @@
 	&.g2 {margin-left: -$g2; margin-right: -$g2; }
 	&.g3 {margin-left: -$g3; margin-right: -$g3; }
 	&.g4 {margin-left: -$g4; margin-right: -$g4; }
-
-	&:after, {content: ""; display:block; clear:both;}
 }
 
 // Flex element ordering
@@ -42,13 +40,23 @@
 	.#{$prefix}text-center {text-align:center;}
 	.#{$prefix}text-right {text-align:right;}
 
-	// Self aligning
+	// Alignment
 	.#{$prefix}self-start, .#{$prefix}self-top {-ms-flex-item-align: start; align-self: flex-start;}
 	.#{$prefix}self-center, .#{$prefix}self-middle {-ms-flex-item-align: center; align-self: center;}
 	.#{$prefix}self-end, .#{$prefix}self-bottom {-ms-flex-item-align: end; align-self: flex-end;}
 
+	.#{$prefix}content-top {-webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+	.#{$prefix}content-middle {-webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+	.#{$prefix}content-bottom {-webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+
+	.#{$prefix}content-start {-webkit-box-pack: start; -ms-flex-pack: start; justify-content: start;}
+	.#{$prefix}content-end {-webkit-box-pack: end; -ms-flex-pack: end; justify-content: end;}
+	.#{$prefix}content-center {-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;}
+	.#{$prefix}content-space { -ms-flex-pack: distribute; justify-content: space-evenly; }
+	.#{$prefix}content-justify {-webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
+
 	// visible and hidden at minimum size
-	.hidden#{$name} {display:none !important;}
+	.hidden#{$name} {display:none;}
 	.display#{$name} {
 		&, &#{-block} {display:block;}
 		&#{-inline} {display:inline;}
@@ -63,24 +71,17 @@
 	.g4 > [class*="os#{$name}"] {padding: $g4;}
 
 	// grid dimensions
+	.os#{$name}-min {max-width: 100%;}
 	@for $i from 1 through 12 {
 		.os#{$name}#{-$i} {max-width: (100% / 12) * $i; -ms-flex: 0 0 (100% / 12) * $i; flex: 0 0 (100% / 12) * $i; width: 100%; }
 	}
 
-	// Row aligning by size
-	.content#{$name}-center {-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;}
-	.content#{$name}-top {-webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
-	.content#{$name}-bottom {-webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
-	.content#{$name}-middle {-webkit-box-align: center; -ms-flex-align: center; align-items: center; }
-	.content#{$name}-space { -ms-flex-pack: distribute; justify-content: space-around; }
-	.content#{$name}-justify {-webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
-
 	// margins in breakpoints
-	@for $i from 0 through 1 {
+	@for $i from 0 through 4 {
 		$amount: max($g1 * $i, $g0);
 		.#{$prefix}#{marg}#{$i} {margin: $amount;}
 	}
-	@for $i from 0 through 1 {
+	@for $i from 0 through 4 {
 		$amount: max($g1 * $i, $g0);
 		.#{$prefix}#{marg}y#{$i} {margin-top: $amount; margin-bottom: $amount;}
 		.#{$prefix}#{marg}x#{$i} {margin-left: $amount; margin-right: $amount;}

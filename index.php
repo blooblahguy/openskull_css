@@ -1,19 +1,22 @@
 <? include("demo/header.php"); ?>
 
 
-<div id="intro" class="padt1"></div>
+<div id="intro" class="anchor"></div>
 <? include("demo/intro.php"); ?>
 
-<div id="grid" class="padt1"></div>
+<div id="grid" class="anchor"></div>
 <? include("demo/grid.php");?>
 
-<div id="type" class="padt1"></div>
+<div id="layout" class="anchor"></div>
+<? include("demo/layout.php");?>
+
+<div id="type" class="anchor"></div>
 <? include("demo/typography.php");?>
 
-<div id="forms" class="padt1"></div>
+<div id="forms" class="anchor"></div>
 <? include("demo/forms.php");?>
 
-<div id="elements" class="padt1"></div>
+<div id="elements" class="anchor"></div>
 <? include("demo/elements.php");?>
 		
 

@@ -31,7 +31,7 @@
 
 	.tab_content {
 		display:none; padding: $g1;
-		&.active {display:block;}
+		&.active, &:target {display:block;}
 	}
 }
 

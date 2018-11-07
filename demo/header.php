@@ -12,8 +12,9 @@
 		<div class="header_outer bg-black fixed t l r">
 			<ul class="jump_nav container menu">
 				<li><a href="#intro" class="text-primary">Openskull</a></li>
-				<li><a href="#grid">Grid &amp; Layout</a></li>
-				<li><a href="#type">Type</a></li>
+				<li><a href="#grid">Grid</a></li>
+				<li><a href="#layout">Layout</a></li>
+				<li><a href="#type">Typography</a></li>
 				<li><a href="#forms">Forms</a></li>
 				<li><a href="#elements">Elements</a></li>
 			</ul>

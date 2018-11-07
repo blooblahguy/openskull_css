@@ -8,8 +8,6 @@
 	$scss = new Compiler();
 	$scss->setImportPaths('');
 	// $scss->setSourceMap(Compiler::SOURCE_MAP_INLINE);
-	$scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
-	// $scss->setFormatter('Leafo\ScssPhp\Formatter\Compact');
 
 	$sheets = array();
 	$sheets[] = "_variables.scss";
@@ -34,9 +32,16 @@
 		}
 	}
 	if ($update) {
+		// 1 non-minified for reference
+		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compact');
 		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
 		file_put_contents("openskull.css", $data);
+
+		// 1 minified
+		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
+		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
+		file_put_contents("openskull.min.css", $data);
 	}
 
-	include("openskull.css");
+	include("openskull.min.css");
 ?>

@@ -30,14 +30,18 @@
 				}
 			})
 			tabs += 1
-			var exp = '';
+			var exp = '\n';
+			// var test = '';
 			for ( i = 1; i <= tabs; i++) {
 				exp += '\t'
+				// test += 't';
 			}
 			exp = new RegExp(exp, "gi")
+			// console.log(target, lines.length, tabs, test)
 			
 			
-			$(this).text(html.replace(exp, "").trim()) // .text auto trims
+			// $(this).text(html)
+			$(this).text(html.replace(exp, "\n").trim()) // .text auto trims
 		}); 
 	</script>
 
