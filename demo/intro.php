@@ -8,14 +8,14 @@
 
 		<hr>
 		<div class="row g1 content-middle margb1">
-			<div class="os-md-3 os-sm-12 text-center">
+			<div class="os-md-3 os-12 text-center">
 				<div class="row">
 					<div class="os-12 padb1"><a href="/openskull.min.css" download class="display-block btn-primary">Download Openskull <small class="em muted"><? echo number_format(filesize("./openskull.min.css") / 1024, 1)."kb"; ?></small></a></div>
 					<!-- <div class="os-12"><a href="/openskull.js" download class="display-block btn-secondary">Download JS</a></div> -->
 				</div>
 			</div>
 			<div class="os">
-				<p>This framework strives to set itself apart by being more lightweight than its alternatives without sacrificing useful functionality. Openskull.css tries to follow some of the standards that major libraries such as bootstrap have set forward, and developers who've used them will probably openskull.css familiar.</p>
+				<p>This framework strives to set itself apart by being more lightweight than its alternatives without sacrificing useful functionality. Openskull.css tries to follow some of the standards that major libraries such as bootstrap have set forward, and developers who've used them will find openskull.css familiar.</p>
 			</div>
 		</div>
 		<div class="message-info">

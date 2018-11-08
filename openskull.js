@@ -69,25 +69,25 @@
 // 	$(window).scroll( function() {scrollFixed()});
 // });
 
+
+var last_location = false
 function scrollSpy() {
 	var $ = jQuery
 	var top = $(window).scrollTop();
 	var topOff = 0
 
-	// $("html,body").stop()
+	// fallback for pure CSS hamburger menu
+	if (last_location) {
+		$(window).scrollTop(last_location);
+		last_location = false;
+		return;
+	}
 
 	if (top > $(".header_outer").offset().top) {
-		// $(".header_outer").css("position", "fixed")
+		$(".header_outer").css("position", "fixed")
 	} else {
 		$(".header_outer").removeAttr("style")
 	}
-	// 	$(".header_outer").css("position", "fixed")
-	// 	$(".header_outer").css("top", $(".jump_nav").position().top + $(".jump_nav").outerHeight()+"px")
-
-	// 	topOff = $(".header_outer").position().top + $(".header_outer").outerHeight();
-	// } else {
-	// 	$(".header_outer").removeAttr("style")
-	// }
 
 	$($(".jump_nav a").get().reverse()).each(function(i, e) {
 		var target = $(this).attr("href")
@@ -104,20 +104,13 @@ function scrollSpy() {
 			return false;
 		}
 	})
-
-	$(".jump_nav a").click(function(e) {
-		var target = $(this).attr("href")
-		var point = $(target).offset().top;
-
-		// $("html,body").stop().animate({scrollTop: point - topOff + 1}, 400);
-		// history.pushState(null, null, $(this).attr("href"));
-
-		// e.preventDefault();
-		// return false;
-	})
 }
 scrollSpy();
 jQuery(window).scroll(scrollSpy)
+
+$("body").on("mouseup", "[href=''],[href='#0'],[href='#body'],[action='#0']", function(e) {
+	last_location = $(window).scrollTop();
+})
 
 // tabs
 $(".tabs").each(function() {

@@ -11,7 +11,7 @@
 // Row for flexboxing
 .row {
 	display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; 
-	&.g0 {margin: $g0; }
+	&.g0 {margin: 0; }
 	&.g1 {margin-left: -$g1; margin-right: -$g1; }
 	&.g2 {margin-left: -$g2; margin-right: -$g2; }
 	&.g3 {margin-left: -$g3; margin-right: -$g3; }
@@ -20,10 +20,10 @@
 
 // Flex element ordering
 .order-first { -webkit-box-ordinal-group: 0; -ms-flex-order: -1; order: -1;}
-@for $i from 1 through 12 {
+@for $i from 1 through 6 {
 	.order-#{$i} {-webkit-box-ordinal-group: $i + 1; -ms-flex-order: $i; order: $i;}
 }
-.order-last { -webkit-box-ordinal-group: 14; -ms-flex-order: 13; order: 13;}
+.order-last { -webkit-box-ordinal-group: 8; -ms-flex-order: 7; order: 7;}
 
 // Full grid mixin
 @mixin grid_sizes($name, $size: false) {
@@ -64,7 +64,7 @@
 	}
 
 	// grid gutters
-	.g0 > [class*="os#{$name}"] {padding: $g0;}
+	.g0 > [class*="os#{$name}"] {padding: 0;}
 	.g1 > [class*="os#{$name}"] {padding: $g1;}
 	.g2 > [class*="os#{$name}"] {padding: $g2;}
 	.g3 > [class*="os#{$name}"] {padding: $g3;}
@@ -78,32 +78,28 @@
 
 	// margins in breakpoints
 	@for $i from 0 through 4 {
-		$amount: max($g1 * $i, $g0);
+		$amount: $g1 * $i;
 		.#{$prefix}#{marg}#{$i} {margin: $amount;}
 	}
 	@for $i from 0 through 4 {
-		$amount: max($g1 * $i, $g0);
-		.#{$prefix}#{marg}y#{$i} {margin-top: $amount; margin-bottom: $amount;}
-		.#{$prefix}#{marg}x#{$i} {margin-left: $amount; margin-right: $amount;}
-		.#{$prefix}#{marg}t#{$i} {margin-top: $amount;}
-		.#{$prefix}#{marg}b#{$i} {margin-bottom: $amount;}
-		.#{$prefix}#{marg}l#{$i} {margin-left: $amount;}
-		.#{$prefix}#{marg}r#{$i} {margin-right: $amount;}
+		$amount: $g1 * $i;
+		.#{$prefix}#{marg}t#{$i}, .#{$prefix}#{marg}y#{$i} {margin-top: $amount;}
+		.#{$prefix}#{marg}b#{$i}, .#{$prefix}#{marg}y#{$i} {margin-bottom: $amount;}
+		.#{$prefix}#{marg}l#{$i}, .#{$prefix}#{marg}x#{$i} {margin-left: $amount;}
+		.#{$prefix}#{marg}r#{$i}, .#{$prefix}#{marg}x#{$i} {margin-right: $amount;}
 	}
 
 	// padding in breakpoints
 	@for $i from 0 through 4 {
-		$amount: max($g1 * $i, $g0);
+		$amount: $g1 * $i;
 		.#{$prefix}#{pad}#{$i} {padding:$amount;}
 	}
 	@for $i from 0 through 4 {
-		$amount: max($g1 * $i, $g0);
-		.#{$prefix}#{pad}y#{$i} {padding-top: $amount; padding-bottom: $amount;}
-		.#{$prefix}#{pad}x#{$i} {padding-left: $amount; padding-right: $amount;}
-		.#{$prefix}#{pad}t#{$i} {padding-top: $amount;}
-		.#{$prefix}#{pad}b#{$i} {padding-bottom: $amount;}
-		.#{$prefix}#{pad}l#{$i} {padding-left: $amount;}
-		.#{$prefix}#{pad}r#{$i} {padding-right: $amount;}
+		$amount: $g1 * $i;
+		.#{$prefix}#{pad}t#{$i}, .#{$prefix}#{pad}y#{$i} {padding-top: $amount;}
+		.#{$prefix}#{pad}b#{$i}, .#{$prefix}#{pad}y#{$i} {padding-bottom: $amount;}
+		.#{$prefix}#{pad}l#{$i}, .#{$prefix}#{pad}x#{$i} {padding-left: $amount;}
+		.#{$prefix}#{pad}r#{$i}, .#{$prefix}#{pad}x#{$i} {padding-right: $amount;}
 	}
 }
 
@@ -112,12 +108,18 @@
 
 // Medium devices (tablets)
 @media (min-width: $viewport-md) {
-	html {font-size: $font-size-md}
 	@include grid_sizes('md', true);
+}
+// Medium devices (tablets and down)
+@media (max-width: $viewport-md) {
+	html {font-size: $font-size-md}
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: $viewport-lg) {
-	html {font-size: $font-size-lg}
 	@include grid_sizes('lg', true);
+}
+// Large devices (desktops, 992px and down)
+@media (max-width: $viewport-lg) {
+	html {font-size: $font-size-lg}
 }

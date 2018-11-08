@@ -4,14 +4,12 @@
 
 // Pagination
 .pagination {
-	margin: 4px 0 8px;
-	> * {
-		display:inline-block; padding: 4px 8px; text-align:center; margin: 0 2px; color:#333; background: #ddd;
-		&:hover {background:#ccc; color: inherit; text-decoration:none;}
-		&.active {background:#337ab7; color:#fff;}
-	}
-	.next, .prev {
-		&:hover {background:#ccc; color:#333;}
+	margin: $g1 0 $g2;
+	& > * + * {margin-left: 4px;}
+	& > * {
+		display:inline-block; padding: $g1 / 4 $g2; text-align:center; color: $black; border: 1px solid #ddd;
+		&:hover {color: $black; background: darken($pure_white, $hover_diff); text-decoration:none;}
+		&.active {background:$primary; border-color: $primary; color:$white; cursor: default; }
 	}
 }
 
@@ -23,7 +21,7 @@
 		li {display:inline-block;}
 		a {
 			font-size: 1rem; border-bottom: 4px solid transparent; cursor:pointer; color:$black; display:inline-block; padding: $g1 $g2;
-			&:hover {background: $grey; text-decoration:none; border-color: $grey;}
+			&:hover {background: darken($pure_white, $hover_diff); text-decoration:none; border-color: $grey;}
 			&:active, &:focus, &.active {border-color: $primary; color:$black;}
 		}
 		a + a {margin-left: $g1;}
@@ -70,7 +68,7 @@ table.noborder tr {border:none;}
 
 // MENUS
 .os_menu {
-	list-style: none; padding: 0; margin: 0;
+	list-style: none; padding: 0; margin: 0; right:0;
 	li {
 		display:inline-block; position: relative; 
 		& > a {display:block; padding: $g1 $g2; border-bottom:4px solid transparent; font-weight: $font-weight-bold; }
@@ -85,28 +83,36 @@ table.noborder tr {border:none;}
 		a {display:block; padding: $g1 $g2;}
 	}
 }
-.os_menu_toggle {
-	display:none; text-align:right; border:none; padding:0; margin: 0; width: 30px; line-height: 0; padding: 6px;
-	span { height: 2px; width: 100%; background: $black; display: inline-block; margin: 2px 0;}
+.os_menu_button {
+	display:none; float:right; text-align:right; border:none; padding:0; margin: 0; width: $g3; line-height: 0; font-size:0;
 
-	&:after {content: ''; clear:both; display:table; float:none;}
-	&:hover, &:focus {background: none; outline:0;}
-	&:hover span, &:focus span {background: $primary; outline:0;}
+	span { height: 3px; width: 100%; background: $black; display: block;}
+	span + span {margin-top:4px;}
+
+	&.close {
+		text-align:center; display:none; padding:4px;
+		span {opacity:0; background: $primary; transform-origin: center; margin:0; }
+		span:first-child {opacity:1; transform: rotate(-45deg); margin-top: 3px; }
+		span:last-child {opacity:1; transform: rotate(45deg); margin-top: -3px; margin-bottom: 3px; }
+	}
 }
-.bg-black .os_menu_toggle span {background: $white; }
 
 @media (max-width: $viewport-lg) {
-	#hamburger_menu .os_menu_toggle {display: inline-block; }
-	#hamburger_menu .os_menu {
-		position: fixed; top: 0; height: 100vh; width: 300px; right: -100%; left:auto; max-width: 300px;
+	$menu_width: 200px !important;
+	.wrapper {position: relative; right:0; left: 0;}
+	.wrapper, .header_outer, .os_menu {position: relative; @include prefix(transition, right $animation-speed ease-in-out, left $animation-speed ease-in-out); }
+	.os_menu_button.open {display: block; }
+	.os_menu {
+		position: fixed; top: 0; height: 100vh; width: $menu_width; max-width: $menu_width; right: -100%; left:auto;
 		li {display:block;}
-		a {display:block; color: $black;}
+		a {display:block;}
 	}
-	#hamburger_menu:target {
-		
-		// right:0;
+	#body:target {
+		.os_menu_button.open {display:none;}
+		.os_menu_button.close {display:block;}
+
 		.os_menu {right:0;}
-		.wrapper {padding-right:300px;}
-		.header_outer {right:300px;}
+		.wrapper {right: $menu_width; left:-$menu_width;}
+		.header_outer {right: $menu_width;}
 	}
 }

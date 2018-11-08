@@ -11,9 +11,9 @@ $viewport-lg: 64rem !default;
 
 // if you have a fixed header, add this to your .anchor tags 
 // to make the document jump with an offset
-$anchor-offset: 50px !default;
+$anchor-offset: 49px !default;
 
-$g0: 0.001rem;
+$g0: 0;
 $g1: $padding * 1;
 $g2: $padding * 2;
 $g3: $padding * 3;
@@ -123,6 +123,15 @@ $h6: (
 	, color: inherit
 	, font-weight: 500
 );
+
+// Setting text color based on readibility
+@function contrast($color) {
+	@if (lightness($color) > 65) {
+		@return $black; // Lighter backgorund, return dark color
+	} @else {
+		@return $white; // Darker background, return light color
+	}
+}
 
 // functions // EX: @include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
 @mixin prefix($prop, $values...) {

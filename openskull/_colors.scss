@@ -3,18 +3,23 @@
 @each $name, $color in $system_colors {
 	.bg-#{$name} {
 		background-color: map-get($color, bg); color: map-get($color, color);
-		a {color: map-get($color, color); }
+		a {color: contrast(map-get($color, bg)); }
 		a:hover, a:focus {color: lighten(map-get($color, color), 15%);}
+
+		.os_menu_button span {background: contrast(map-get($color, bg)); }
 	}
 }
 
 // MESSAGES
 @each $name, $color in $system_colors {
 	.message-#{$name} {
+		$bg: rgba(map-get($color, bg), .25);
+		$bg_test: lighten(map-get($color, bg), 25%);
 		border-left: 4px solid transparent; padding: $g2 $g4; margin-bottom: $g2;
-		background-color: rgba(map-get($color, bg), .25); color: map-get($color, color); border-color: map-get($color, bg);
+		background-color: $bg; color: contrast($bg_test); border-color: map-get($color, bg);
 	}
 }
+[class*="message-"] p:last-child {margin-bottom:0;}
 
 // TEXT COLORS
 @each $name, $color in $system_colors {

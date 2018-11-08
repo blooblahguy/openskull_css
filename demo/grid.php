@@ -75,12 +75,12 @@
 		<pre><code target=".contentalignment"></code></pre>
 		<div class="bord pad2">
 			<div class="contentalignment">
-				<div class="row g1 content-middle" style="height: 100px">
+				<div class="row g1 content-middle">
 					<div class="os"><div class="bg-primary pad1">I'm a different height <br> because of 2 lines</div></div>
 					<div class="os"><div class="pad1 bg-grey"></div></div>
 				</div>
 				<hr>
-				<div class="row g1 content-bottom" style="height: 100px">
+				<div class="row g1 content-bottom">
 					<div class="os"><div class="bg-primary pad1">I'm a different height <br> because of 2 lines</div></div>
 					<div class="os"><div class="pad1 bg-grey"></div></div>
 				</div>
@@ -120,7 +120,7 @@
 
 
 		<h3>DOM-Independent Positioning</h3>
-		<p>You can also change the order of elements with easy helper classes <kbd>.order-first</kbd>, <kbd>.order-last</kbd>, or <kbd>.order-[1-12]</kbd></p>
+		<p>You can also change the order of elements with easy helper classes <kbd>.order-first</kbd>, <kbd>.order-last</kbd>, or <kbd>.order-[1-6]</kbd></p>
 		<pre><code target=".gridordering"></code></pre>
 		<div class="bord pad2">
 			<div class="gridordering">

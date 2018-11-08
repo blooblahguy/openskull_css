@@ -1,10 +1,5 @@
-body {font-size: $font-size; color: $font-color; line-height: $line-height; font-weight: $font-weight; font-family: $font-family-sans-serif;}
-
 // Text manipulation
 small {font-size: .707rem;}
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right {text-align: right;}
 .text-justify {text-align: justify; text-justify: inter-word;}
 .text-lower {text-transform: lowercase;}
 

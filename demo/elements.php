@@ -7,6 +7,10 @@
 <div class="section">
 	<div class="container">
 		<p class="message-warning">Work in progress documentation</p>
+		<h3>Buttons</h3>
+		<p>Buttons change dramatically from site to site, so we give the most simple</p>
+		<h3>Tooltips</h3>
+		<h3>Modals</h3>
 		<h3>Tabs</h3>
 		<div class="tabs">
 			<div class="tab_nav">
@@ -42,12 +46,12 @@
 			<div class="tab_content" tab="pagination">
 				<h4>Pagination</h4>
 				<div class="pagination row">
-					<a href="#0" refalse class="prev">Prev</a>
-					<a href="#0" refalse>1</a>
-					<a href="#0" refalse class="active">2</a>
-					<a href="#0" refalse>3</a>
-					<a href="#0" refalse>4</a>
-					<a href="#0" refalse class="next">Next</a>
+					<a href="#0" class="prev">Prev</a>
+					<a href="#0">1</a>
+					<a href="#0" class="active">2</a>
+					<a href="#0">3</a>
+					<a href="#0">4</a>
+					<a href="#0" class="next">Next</a>
 				</div>
 			</div>
 

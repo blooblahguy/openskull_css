@@ -34,7 +34,7 @@
 
 	if ($update) {
 		// 1 non-minified for reference
-		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compact');
+		$scss->setFormatter('Leafo\ScssPhp\Formatter\Expanded');
 		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
 		file_put_contents("openskull.css", $data);
 

@@ -14,8 +14,9 @@
 @each $name, $color in $system_colors {
 	.btn-#{$name}, input.btn-#{$name} {
 		@extend %btn-base;
-		color: map-get($color, color); background: map-get($color, bg); border-color: darken(map-get($color, bg), $hover_diff);
-		&:hover, &:focus {color: map-get($color, color); background-color: lighten(map-get($color, bg), $hover_diff); border-color: map-get($color, bg);}
+		$bg: map-get($color, bg);
+		color: contrast($bg); background: $bg; border-color: darken($bg, $hover_diff);
+		&:hover, &:focus {color: contrast(lighten($bg)); background-color: lighten($bg, $hover_diff); border-color: $bg;}
 	}
 }
 
