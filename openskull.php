@@ -23,7 +23,7 @@
 
 	// cached updating
 	$update = false;
-	$cache_mod = filemtime("openskull.css");
+	$cache_mod = filemtime("openskull.min.css");
 	$this_mod = filemtime(__FILE__);
 	foreach ($sheets as $sheet) {
 		if (filemtime($sheet) > $cache_mod || $this_mod > $cache_mod) {
@@ -31,6 +31,7 @@
 			break;
 		}
 	}
+
 	if ($update) {
 		// 1 non-minified for reference
 		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compact');
