@@ -2,7 +2,7 @@
 .bg-none {background:none; color:inherit;}
 @each $name, $color in $system_colors {
 	.bg-#{$name} {
-		background-color: map-get($color, bg); color: map-get($color, color);
+		background-color: map-get($color, bg); color: contrast(map-get($color, bg)); 
 		a {color: contrast(map-get($color, bg)); }
 		a:hover, a:focus {color: lighten(map-get($color, color), 15%);}
 
@@ -26,8 +26,12 @@
 
 // TEXT COLORS
 @each $name, $color in $system_colors {
-	.text-#{$name}, a.text-#{$name} {
+	.text-#{$name}, {
 		color: map-get($color, bg);
-		&:hover, &:focus {color: lighten(map-get($color, bg), $hover_diff);}
+		
+	}
+	a.text-#{$name} {
+		color: map-get($color, bg);
+		&a:hover, &a:focus {color: lighten(map-get($color, bg), $hover_diff);}
 	}
 }

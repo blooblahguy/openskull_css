@@ -143,7 +143,7 @@ svg:not(:root) {
 }
 .bg-success {
   background-color: #22ac73;
-  color: #333;
+  color: #fafafa;
 }
 .bg-success a {
   color: #fafafa;
@@ -156,7 +156,7 @@ svg:not(:root) {
 }
 .bg-info {
   background-color: #5ea9dc;
-  color: #333;
+  color: #fafafa;
 }
 .bg-info a {
   color: #fafafa;
@@ -169,7 +169,7 @@ svg:not(:root) {
 }
 .bg-warning {
   background-color: #f39c12;
-  color: #333;
+  color: #fafafa;
 }
 .bg-warning a {
   color: #fafafa;
@@ -182,7 +182,7 @@ svg:not(:root) {
 }
 .bg-error {
   background-color: #e74c3c;
-  color: #333;
+  color: #fafafa;
 }
 .bg-error a {
   color: #fafafa;
@@ -277,67 +277,97 @@ svg:not(:root) {
 [class*="message-"] p:last-child {
   margin-bottom: 0;
 }
-.text-black, a.text-black {
+.text-black {
   color: #333;
 }
-.text-black:hover, a.text-black:hover, .text-black:focus, a.text-black:focus {
+a.text-black {
+  color: #333;
+}
+a.text-blacka:hover, a.text-blacka:focus {
   color: #454545;
 }
-.text-white, a.text-white {
+.text-white {
   color: #fafafa;
 }
-.text-white:hover, a.text-white:hover, .text-white:focus, a.text-white:focus {
+a.text-white {
+  color: #fafafa;
+}
+a.text-whitea:hover, a.text-whitea:focus {
   color: #fff;
 }
-.text-primary, a.text-primary {
+.text-primary {
   color: #3493d3;
 }
-.text-primary:hover, a.text-primary:hover, .text-primary:focus, a.text-primary:focus {
+a.text-primary {
+  color: #3493d3;
+}
+a.text-primarya:hover, a.text-primarya:focus {
   color: #51a3d9;
 }
-.text-secondary, a.text-secondary {
+.text-secondary {
   color: #22ac73;
 }
-.text-secondary:hover, a.text-secondary:hover, .text-secondary:focus, a.text-secondary:focus {
-  color: #28ca87;
-}
-.text-success, a.text-success {
+a.text-secondary {
   color: #22ac73;
 }
-.text-success:hover, a.text-success:hover, .text-success:focus, a.text-success:focus {
+a.text-secondarya:hover, a.text-secondarya:focus {
   color: #28ca87;
 }
-.text-info, a.text-info {
+.text-success {
+  color: #22ac73;
+}
+a.text-success {
+  color: #22ac73;
+}
+a.text-successa:hover, a.text-successa:focus {
+  color: #28ca87;
+}
+.text-info {
   color: #5ea9dc;
 }
-.text-info:hover, a.text-info:hover, .text-info:focus, a.text-info:focus {
+a.text-info {
+  color: #5ea9dc;
+}
+a.text-infoa:hover, a.text-infoa:focus {
   color: #7bb9e2;
 }
-.text-warning, a.text-warning {
+.text-warning {
   color: #f39c12;
 }
-.text-warning:hover, a.text-warning:hover, .text-warning:focus, a.text-warning:focus {
+a.text-warning {
+  color: #f39c12;
+}
+a.text-warninga:hover, a.text-warninga:focus {
   color: #f5aa34;
 }
-.text-error, a.text-error {
+.text-error {
   color: #e74c3c;
 }
-.text-error:hover, a.text-error:hover, .text-error:focus, a.text-error:focus {
+a.text-error {
+  color: #e74c3c;
+}
+a.text-errora:hover, a.text-errora:focus {
   color: #eb695c;
 }
-.text-grey, a.text-grey {
+.text-grey {
   color: #ddd;
 }
-.text-grey:hover, a.text-grey:hover, .text-grey:focus, a.text-grey:focus {
+a.text-grey {
+  color: #ddd;
+}
+a.text-greya:hover, a.text-greya:focus {
   color: #efefef;
 }
-.text-dark, a.text-dark {
+.text-dark {
   color: #555;
 }
-.text-dark:hover, a.text-dark:hover, .text-dark:focus, a.text-dark:focus {
+a.text-dark {
+  color: #555;
+}
+a.text-darka:hover, a.text-darka:focus {
   color: #676767;
 }
-.btn, button, input[type="submit"], input[type="button"], .btn-black, input.btn-black, .btn-white, input.btn-white, .btn-primary, input.btn-primary, .btn-secondary, input.btn-secondary, .btn-success, input.btn-success, .btn-info, input.btn-info, .btn-warning, input.btn-warning, .btn-error, input.btn-error, .btn-grey, input.btn-grey, .btn-dark, input.btn-dark {
+.btn, a.btn, button, input[type="submit"], input[type="button"], .btn-black, input.btn-black, .btn-white, input.btn-white, .btn-primary, input.btn-primary, .btn-secondary, input.btn-secondary, .btn-success, input.btn-success, .btn-info, input.btn-info, .btn-warning, input.btn-warning, .btn-error, input.btn-error, .btn-grey, input.btn-grey, .btn-dark, input.btn-dark {
   background: transparent;
   text-decoration: none;
   border: 2px solid #ddd;
@@ -347,17 +377,19 @@ svg:not(:root) {
   text-align: center;
   box-shadow: none;
   display: inline-block;
+  color: #333;
 }
-.btn:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover, .btn-black:hover, input.btn-black:hover, .btn-white:hover, input.btn-white:hover, .btn-primary:hover, input.btn-primary:hover, .btn-secondary:hover, input.btn-secondary:hover, .btn-success:hover, input.btn-success:hover, .btn-info:hover, input.btn-info:hover, .btn-warning:hover, input.btn-warning:hover, .btn-error:hover, input.btn-error:hover, .btn-grey:hover, input.btn-grey:hover, .btn-dark:hover, input.btn-dark:hover, .btn:focus, button:focus, input[type="submit"]:focus, input[type="button"]:focus, .btn-black:focus, input.btn-black:focus, .btn-white:focus, input.btn-white:focus, .btn-primary:focus, input.btn-primary:focus, .btn-secondary:focus, input.btn-secondary:focus, .btn-success:focus, input.btn-success:focus, .btn-info:focus, input.btn-info:focus, .btn-warning:focus, input.btn-warning:focus, .btn-error:focus, input.btn-error:focus, .btn-grey:focus, input.btn-grey:focus, .btn-dark:focus, input.btn-dark:focus {
+.btn:hover, a.btn:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover, .btn-black:hover, input.btn-black:hover, .btn-white:hover, input.btn-white:hover, .btn-primary:hover, input.btn-primary:hover, .btn-secondary:hover, input.btn-secondary:hover, .btn-success:hover, input.btn-success:hover, .btn-info:hover, input.btn-info:hover, .btn-warning:hover, input.btn-warning:hover, .btn-error:hover, input.btn-error:hover, .btn-grey:hover, input.btn-grey:hover, .btn-dark:hover, input.btn-dark:hover, .btn:focus, a.btn:focus, button:focus, input[type="submit"]:focus, input[type="button"]:focus, .btn-black:focus, input.btn-black:focus, .btn-white:focus, input.btn-white:focus, .btn-primary:focus, input.btn-primary:focus, .btn-secondary:focus, input.btn-secondary:focus, .btn-success:focus, input.btn-success:focus, .btn-info:focus, input.btn-info:focus, .btn-warning:focus, input.btn-warning:focus, .btn-error:focus, input.btn-error:focus, .btn-grey:focus, input.btn-grey:focus, .btn-dark:focus, input.btn-dark:focus {
   text-decoration: none;
+  color: #333;
   background: #e8e8e8;
   border-color: #cbcbcb;
 }
-.btn.btn-lg, button.btn-lg, input[type="submit"].btn-lg, input[type="button"].btn-lg, .btn-black.btn-lg, input.btn-black.btn-lg, .btn-white.btn-lg, input.btn-white.btn-lg, .btn-primary.btn-lg, input.btn-primary.btn-lg, .btn-secondary.btn-lg, input.btn-secondary.btn-lg, .btn-success.btn-lg, input.btn-success.btn-lg, .btn-info.btn-lg, input.btn-info.btn-lg, .btn-warning.btn-lg, input.btn-warning.btn-lg, .btn-error.btn-lg, input.btn-error.btn-lg, .btn-grey.btn-lg, input.btn-grey.btn-lg, .btn-dark.btn-lg, input.btn-dark.btn-lg {
+.btn.btn-lg, a.btn.btn-lg, button.btn-lg, input[type="submit"].btn-lg, input[type="button"].btn-lg, .btn-black.btn-lg, input.btn-black.btn-lg, .btn-white.btn-lg, input.btn-white.btn-lg, .btn-primary.btn-lg, input.btn-primary.btn-lg, .btn-secondary.btn-lg, input.btn-secondary.btn-lg, .btn-success.btn-lg, input.btn-success.btn-lg, .btn-info.btn-lg, input.btn-info.btn-lg, .btn-warning.btn-lg, input.btn-warning.btn-lg, .btn-error.btn-lg, input.btn-error.btn-lg, .btn-grey.btn-lg, input.btn-grey.btn-lg, .btn-dark.btn-lg, input.btn-dark.btn-lg {
   font-size: 1.303rem;
   padding: 1.2rem 2.4rem;
 }
-.btn.btn-sm, button.btn-sm, input[type="submit"].btn-sm, input[type="button"].btn-sm, .btn-black.btn-sm, input.btn-black.btn-sm, .btn-white.btn-sm, input.btn-white.btn-sm, .btn-primary.btn-sm, input.btn-primary.btn-sm, .btn-secondary.btn-sm, input.btn-secondary.btn-sm, .btn-success.btn-sm, input.btn-success.btn-sm, .btn-info.btn-sm, input.btn-info.btn-sm, .btn-warning.btn-sm, input.btn-warning.btn-sm, .btn-error.btn-sm, input.btn-error.btn-sm, .btn-grey.btn-sm, input.btn-grey.btn-sm, .btn-dark.btn-sm, input.btn-dark.btn-sm {
+.btn.btn-sm, a.btn.btn-sm, button.btn-sm, input[type="submit"].btn-sm, input[type="button"].btn-sm, .btn-black.btn-sm, input.btn-black.btn-sm, .btn-white.btn-sm, input.btn-white.btn-sm, .btn-primary.btn-sm, input.btn-primary.btn-sm, .btn-secondary.btn-sm, input.btn-secondary.btn-sm, .btn-success.btn-sm, input.btn-success.btn-sm, .btn-info.btn-sm, input.btn-info.btn-sm, .btn-warning.btn-sm, input.btn-warning.btn-sm, .btn-error.btn-sm, input.btn-error.btn-sm, .btn-grey.btn-sm, input.btn-grey.btn-sm, .btn-dark.btn-sm, input.btn-dark.btn-sm {
   font-size: 0.707rem;
   padding: 0.3rem 0.6rem;
 }
@@ -417,7 +449,7 @@ svg:not(:root) {
   border-color: #419ad6;
 }
 .btn-info:hover, input.btn-info:hover, .btn-info:focus, input.btn-info:focus {
-  color: #fafafa;
+  color: #333;
   background-color: #7bb9e2;
   border-color: #5ea9dc;
 }

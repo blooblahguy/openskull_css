@@ -126,6 +126,7 @@ $h6: (
 
 // Setting text color based on readibility
 @function contrast($color) {
+	// @return lightness($color);
 	@if (lightness($color) > 65) {
 		@return $black; // Lighter backgorund, return dark color
 	} @else {

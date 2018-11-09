@@ -6,9 +6,23 @@
 </div>
 <div class="section">
 	<div class="container">
-		<p class="message-warning">Work in progress documentation</p>
+		<p>If you are looking for a library that gives you all of the UI elements you could ever possible want, this is probably not the framework for you.</p>
+		<p>There are a few important UI elements that are important for the user experience. Here's our take on those elements.</p>
 		<h3>Buttons</h3>
-		<p>Buttons change dramatically from site to site, so we give the most simple</p>
+		<p>Buttons are diverse, sometimes you want them to display inline, other times as fat blocks. For that reason we try and leave the default buttons similar to how the browser intended. You can still make buttons full with with <kbd>.block</kbd> or add padding with the <kbd>.pad[n]</kbd> helpers outlines in Layouts.</p>
+		<div class="row g2">
+			<div class="os-md-4 os-6"><a href="#0" class="btn">Button Default</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-primary">Button Primary</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-secondary">Button Secondary</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-white">Button White</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-grey">Button Grey</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-dark">Button Dark</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-black">Button Black</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-success">Button Success</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-info">Button Info</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-warning">Button Warning</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-error">Button Error</a></div>
+		</div>
 		<h3>Tooltips</h3>
 		<h3>Modals</h3>
 		<h3>Tabs</h3>
