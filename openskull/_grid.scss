@@ -106,20 +106,20 @@
 // baseline classes (non-responsive)
 @include grid_sizes('');
 
-// Medium devices (tablets)
+// Medium devices (tablets, 768px and up)
 @media (min-width: $viewport-md) {
 	@include grid_sizes('md', true);
 }
-// Medium devices (tablets and down)
+// Medium devices (tablets, 768px and down)
 @media (max-width: $viewport-md) {
 	html {font-size: $font-size-md}
 }
 
-// Large devices (desktops, 992px and up)
+// Large devices (desktops, 1024px and up)
 @media (min-width: $viewport-lg) {
 	@include grid_sizes('lg', true);
 }
-// Large devices (desktops, 992px and down)
+// Large devices (desktops, 1024px and down)
 @media (max-width: $viewport-lg) {
 	html {font-size: $font-size-lg}
 }

@@ -11,11 +11,14 @@
 }
 
 // MESSAGES
+%message {
+	border-left: 4px solid transparent; padding: $g2 $g4; margin-bottom: $g2;
+}
 @each $name, $color in $system_colors {
 	.message-#{$name} {
 		$bg: rgba(map-get($color, bg), .25);
 		$bg_test: lighten(map-get($color, bg), 25%);
-		border-left: 4px solid transparent; padding: $g2 $g4; margin-bottom: $g2;
+		@extend %message;
 		background-color: $bg; color: contrast($bg_test); border-color: map-get($color, bg);
 	}
 }

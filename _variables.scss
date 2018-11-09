@@ -6,8 +6,8 @@ $padding: 0.6rem;
 /////////////////////////
 // Layout
 /////////////////////////
-$viewport-md: 48rem !default;
-$viewport-lg: 64rem !default;
+$viewport-md: 48rem !default; // 768px
+$viewport-lg: 64rem !default; // 1024px
 
 // if you have a fixed header, add this to your .anchor tags 
 // to make the document jump with an offset

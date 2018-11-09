@@ -65,11 +65,6 @@
 				<p>Blockquotes are simplified, and embeddable. Just use the <kbd>blockquote</kbd> tag as you would normally.</p>
 				<blockquote>
 					<p>An embedded blockquote can be useful for comments or forums where users quote one another.</p>
-					<blockquote>
-						<p>This is inception and this user is quoting a quote of a quote.</p>
-						<blockquote><p>This is inception and this user is quoting a quote of a quote.</p></blockquote>
-					</blockquote>
-					
 				</blockquote>
 				<blockquote>Maybe someone else already answered this question?.</blockquote>
 			</blockquote>

@@ -4,11 +4,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 // change highlight text
 *::selection, *::-moz-selection {background: $primary; color: $white}
 
-// fix number spinner selection in some browsers
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
+// html fixes
 hr {margin-top: $g2; margin-bottom: $g2; border: none; border-top: 1px solid $grey; display:block; clear:both; float:none;}
 audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
 audio:not([controls]) { display: none; height: 0; }
