@@ -27,7 +27,7 @@
 // TEXT COLORS
 @each $name, $color in $system_colors {
 	.text-#{$name}, {
-		color: map-get($color, bg);
+		color: map-get($color, bg) !important;
 		
 	}
 	a.text-#{$name} {

@@ -8,7 +8,7 @@ input, select, textarea {
 	&:required {border-left-width: 4px;}
 	&:invalid {border-left-color: $warning; color: $dark; font-style: italic; }
 	&:invalid:focus, &:invalid:active {border-left-color: $error;}
-	&:not(:invalid) {border-left-color: $success;}
+	&:required:not(:invalid) {border-left-color: $success;}
 }
 textarea {resize: vertical;}
 select[multiple] {height: auto; overflow:auto; }

@@ -4,7 +4,7 @@
 	&:hover, &:focus {text-decoration:none; color: contrast(darken($white, $hover_diff)); background: darken($white, $hover_diff); border-color: darken($grey, $hover_diff);}
 
 	&#{-btn-lg}, &.btn-lg {font-size: 1.303rem; padding: $g2 $g4; }
-	&#{-btn-sm}, &.btn-sm {font-size: .707rem; padding: $g1 /2 $g1; }
+	&#{-btn-sm}, &.btn-sm {font-size: .707rem; padding: $g1 / 3 $g1; }
 }
 
 .btn, a.btn, button, input[type="submit"], input[type="button"] {
@@ -20,3 +20,4 @@
 	}
 }
 
+.btn-blank, .btn-blank:hover {@extend %btn-base; border:none;  color: inherit; }

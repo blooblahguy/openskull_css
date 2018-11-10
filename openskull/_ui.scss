@@ -35,26 +35,99 @@
 
 // Tooltips
 [tooltip] {
-	position: relative;
-	&:hover:before, &:active:before, &:hover:after, &:active:after {position: absolute; z-index:100; top: 0; left: 50%; background: $black; border:1px solid darken($black, $hover_diff); }
-	&:hover:before, &:active:before { content: attr(tooltip); max-width:300px; transform: translate(-50%, -100%); color: $white; font-size: 12px; padding: $g1 $g2;}
-	&:hover:after, &:active:after {content: ''; width: 10px; height: 10px; transform: translate(-50%, -50%) rotate(45deg); border-top: none; border-left:none; }
+	$background: rgba($black, 0.8);
+	$offset: -$g2;
+	
+	position:relative;
+	&::before, &::after {position: absolute; z-index: 100; opacity:1; left:50%; top: $offset; }
+	// Notch
+	&:before {transform: translateX(-50%); border-width: 4px 6px 0 6px; border-style: solid; border-color: $background transparent transparent transparent; }
+	// Body
+	&:after {max-width:300px; min-width: calc(100% + #{$g4 * 2}); background: $background;}
+
+	%reset_tooltip {right: auto; left: auto; bottom: auto; top: auto; }
+	&[tooltip-right] {
+		@extend %reset_tooltip;
+		&:before {right: $offset; top: 50%; transform: translate(0, -50%) rotate(90deg);}
+		&:after {right: $offset; top: 50%; transform: translate(0, -50%); }
+	}
+	&[tooltip-bottom] {
+		@extend %reset_tooltip;
+		&:before {}
+		&:after {}
+	}
+	&[tooltip-left] {
+		@extend %reset_tooltip;
+		&:before {left: $offset; top:50%; transform: translate(0, -50%) rotate(-90deg);}
+		&:after {}
+	}
+
+	&:hover, &:active {
+		&:after {content: attr(tooltip); }
+		&:before {content: ''; }
+	}
+
+}
+
+[tooltip-top]::before{
+  left:50%;
+}
+[tooltip-bottom]::before{
+  top:100%;
+  margin-top:8px;
+  transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+}
+
+[tooltip]::after {
+
+    
+    // transform: translateX(-50%)   translateY(-100%);
+    background: rgba(0,0,0,0.7);
+	
+    text-align: center;
+    color: #fff;
+    padding:4px 2px;
+    font-size: 12px;
+    // min-width: 80px;
+    pointer-events: none;
+    padding: 4px 4px;
+}
+
+[tooltip-left]::after{
+  left:0%;
+  top:50%;
+  margin-left:-8px;
+  transform: translateX(-100%) translateY(-50%);
+}
+[tooltip-top]::after{
+  left:50%;
+}
+[tooltip-bottom]::after{
+  top:100%;
+  margin-top:8px;
+  transform: translateX(-50%) translateY(0%);
 }
 
 // Modal
 .modal {
-	position:fixed; top:0; left:0; right:0; width:100%; height:30%; background: $white; z-index: $z-high; color: $black; padding: $g1;
-	.container {position:relative;}
-	&::before {
-		content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 100vh; z-index: $z-bg; background:rgba(0,0,0,.6);
-	}
-	.close {
-		font-size:30px; position:absolute; top: 0; right: 0; cursor: pointer; opacity: 0.8; padding: $g1 / 2; height: 20px; width: 20px;
-		&:before, &:after {content: ''; width: 100%; height: 3px; position:absolute; top: 50%; left: 50%; background: $black; }
+	display:none; padding: $g2 0; position:fixed; @include prefix(transform, translateY(-50%)); top:50%; left:0; right:0; width:100%; z-index: $z-high;
+	&:target {display:block;}
+	.modal_body {@extend .container; color: $black; padding: $g2; background: $white; position: relative; box-shadow: 0 0 $g4 rgba($black, .35)}
+	.modal_bg, &:before {cursor:default; position: fixed; top: -50vh; bottom: -50vh; left: -25%; right: -25%; z-index: $z-bg;}
+	&:before { content: ''; background:rgba(0,0,0,.6);}
+	.modal_close {
+		font-size: $g3; position:absolute; top: -$g2; right: -$g2; cursor: pointer; height: $g4; width: $g4; background: $grey; border-radius: 50%; 
+		&:before, &:after {
+			content: ''; width: 50%; height: 3px; position:absolute; top: 50%; left: 50%; background: $black; 
+		}
 		&:before {transform: translate(-50%, -50%) rotate(45deg); }
 		&:after {transform: translate(-50%, -50%) rotate(-45deg); }
-		&:hover {opacity:1;}
+		&:hover {
+			background: $black;
+			&:before, &:after {background:$white;}
+		}
 	}
+	&:after {@extend .clear;}
 }
 
 
