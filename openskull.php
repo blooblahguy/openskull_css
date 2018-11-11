@@ -1,17 +1,10 @@
 <?php
 	header('Content-Type: text/css');
-	require_once 'scssphp/scss.inc.php';
-	use Leafo\ScssPhp\Compiler;
 
-	error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
-
-	$scss = new Compiler();
-	$scss->setImportPaths('');
-	// $scss->setSourceMap(Compiler::SOURCE_MAP_INLINE);
 
 	$sheets = array();
 	$sheets[] = "_variables.scss";
-	$sheets[] = "_defaults.scss";
+	$sheets[] = "openskull/_defaults.scss";
 	$sheets[] = "openskull/_reset.scss";
 	$sheets[] = "openskull/_colors.scss";
 	$sheets[] = "openskull/_buttons.scss";
@@ -33,7 +26,15 @@
 		}
 	}
 
+	use Leafo\ScssPhp\Compiler;
 	if ($update) {
+		require_once 'scssphp/scss.inc.php';
+
+		error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+
+		$scss = new Compiler();
+		$scss->setImportPaths('');
+
 		// 1 non-minified for reference
 		$scss->setFormatter('Leafo\ScssPhp\Formatter\Expanded');
 		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");

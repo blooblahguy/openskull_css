@@ -22,7 +22,7 @@
 			<div class="os-md-4 os-6"><a href="#0" class="btn-success">.btn-success</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-info">.btn-info</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-warning">.btn-warning</a></div>
-			<div class="os-md-4 os-6"><a href="#0" class="btn-error">.btn-erro</a></div>
+			<div class="os-md-4 os-6"><a href="#0" class="btn-error">.btn-error</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-primary btn-lg">.btn-primary.btn-lg</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-primary btn-sm">.btn-primary.btn-sm</a></div>
 		</div>

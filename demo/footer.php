@@ -31,22 +31,27 @@
 			})
 			tabs += 1
 			var exp = '\n';
-			// var test = '';
+			var test = '';
 			for ( i = 1; i <= tabs; i++) {
 				exp += '\t'
-				// test += 't';
+				test += 't';
 			}
 			exp = new RegExp(exp, "gi")
-			// console.log(target, lines.length, tabs, test)
+			console.log(target, lines.length, tabs, test)
 			
-			
-			// $(this).text(html)
-			$(this).text(html.replace(exp, "\n").trim()) // .text auto trims
+		
+			html = html.replace(exp, "\n").trim()
+
+			if (/<[a-z/][\s\S]*>/i.test(html)) {
+				$(this).text(html) // .text auto trims
+			} else {
+				$(this).html(html) // .text auto trims
+			}
 		}); 
 	</script>
 
 	<script src="/openskull.js"></script>
 	<script src="/demo/prettify.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+	<script> hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
