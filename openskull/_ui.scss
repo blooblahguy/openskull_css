@@ -14,7 +14,6 @@
 }
 
 // Tabs
-
 .tabs {
 	.tab_nav {
 		overflow:hidden; font-size:0; list-style:none; margin-bottom: -1px;
@@ -28,7 +27,7 @@
 	}
 
 	.tab_content {
-		display:none; padding: $g1;
+		@extend .bord; display:none; padding: $g3;
 		&.active, &:target {display:block;}
 	}
 }
@@ -36,77 +35,79 @@
 // Tooltips
 [tooltip] {
 	$background: rgba($black, 0.8);
-	$offset: -$g2;
+
+	$notch_size: 5px;
+	$offset: 10px;
+	$body_pos: calc(100% + #{$offset});
+	$notch_pos: calc(100% + #{$offset} - #{$notch_size});
 	
 	position:relative;
-	&::before, &::after {position: absolute; z-index: 100; opacity:1; left:50%; top: $offset; }
+	&::before, &::after {position: absolute; z-index: 100; opacity:1; left:50%;}
 	// Notch
-	&:before {transform: translateX(-50%); border-width: 4px 6px 0 6px; border-style: solid; border-color: $background transparent transparent transparent; }
+	&:before {top: -$notch_size; transform: translate(-50%, -100%); max-width:300px; min-width: calc(100% + #{$g4 * 2}); background: $background; color: $white; padding: $g1 $g2; pointer-events: none; text-align: center; font-size: 0.9rem;}
 	// Body
-	&:after {max-width:300px; min-width: calc(100% + #{$g4 * 2}); background: $background;}
+	&:after {top: 0; transform: translate(-50%, -100%); border-width: $notch_size $notch_size*1.3 0 $notch_size*1.3; border-style: solid; border-color: $background transparent transparent transparent; }
 
-	%reset_tooltip {right: auto; left: auto; bottom: auto; top: auto; }
-	&[tooltip-right] {
-		@extend %reset_tooltip;
-		&:before {right: $offset; top: 50%; transform: translate(0, -50%) rotate(90deg);}
-		&:after {right: $offset; top: 50%; transform: translate(0, -50%); }
-	}
-	&[tooltip-bottom] {
-		@extend %reset_tooltip;
-		&:before {}
-		&:after {}
-	}
-	&[tooltip-left] {
-		@extend %reset_tooltip;
-		&:before {left: $offset; top:50%; transform: translate(0, -50%) rotate(-90deg);}
-		&:after {}
-	}
+	// &[tooltip-right] {
+	// 	&:before { top: 50%; right: -$notch_size; bottom: auto; left: auto; transform: translate(100%, -50%);}
+	// 	&:after { top: 50%; right: 0; bottom: auto; left: auto;  transform: translate(100%, -50%) rotate(90deg);}
+	// }
+	// &[tooltip-bottom] {
+	// 	@extend %reset_tooltip;
+	// 	&:before {}
+	// 	&:after {}
+	// }
+	// &[tooltip-left] {
+	// 	@extend %reset_tooltip;
+	// 	&:before {left: $offset; top:50%; transform: translate(0, -50%) rotate(-90deg);}
+	// 	&:after {}
+	// }
 
 	&:hover, &:active {
-		&:after {content: attr(tooltip); }
-		&:before {content: ''; }
+		&:before {content: attr(tooltip); }
+		&:after {content: ''; }
 	}
 
 }
 
-[tooltip-top]::before{
-  left:50%;
-}
-[tooltip-bottom]::before{
-  top:100%;
-  margin-top:8px;
-  transform: translateX(-50%) translatey(-100%) rotate(-180deg)
-}
+// [tooltip-top]::before{
+//   left:50%;
+// }
+// [tooltip-bottom]::before{
+//   top:100%;
+//   margin-top:8px;
+//   transform: translateX(-50%) translatey(-100%) rotate(-180deg)
+// }
 
-[tooltip]::after {
+// [tooltip]::after {
 
     
-    // transform: translateX(-50%)   translateY(-100%);
-    background: rgba(0,0,0,0.7);
+//     // transform: translateX(-50%)   translateY(-100%);
+//     background: rgba(0,0,0,0.7);
 	
-    text-align: center;
-    color: #fff;
-    padding:4px 2px;
-    font-size: 12px;
-    // min-width: 80px;
-    pointer-events: none;
-    padding: 4px 4px;
-}
+//     text-align: center;
+//     color: #fff;
+//     padding:4px 2px;
+//     font-size: 12px;
+//     // min-width: 80px;
+//     pointer-events: none;
+//     padding: 4px 4px;
+// }
 
-[tooltip-left]::after{
-  left:0%;
-  top:50%;
-  margin-left:-8px;
-  transform: translateX(-100%) translateY(-50%);
-}
-[tooltip-top]::after{
-  left:50%;
-}
-[tooltip-bottom]::after{
-  top:100%;
-  margin-top:8px;
-  transform: translateX(-50%) translateY(0%);
-}
+// [tooltip-left]::after{
+//   left:0%;
+//   top:50%;
+//   margin-left:-8px;
+//   transform: translateX(-100%) translateY(-50%);
+// }
+// [tooltip-top]::after{
+//   left:50%;
+// }
+// [tooltip-bottom]::after{
+//   top:100%;
+//   margin-top:8px;
+//   transform: translateX(-50%) translateY(0%);
+// }
 
 // Modal
 .modal {
