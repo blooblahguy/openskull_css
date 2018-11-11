@@ -109,7 +109,7 @@ scrollSpy();
 jQuery(window).scroll(scrollSpy)
 
 $("body").on("mouseup", "[href=''],[href='#0'],[href='#body'],[action='#0']", function(e) {
-	last_location = $(window).scrollTop();
+	// last_location = $(window).scrollTop();
 })
 
 // tabs

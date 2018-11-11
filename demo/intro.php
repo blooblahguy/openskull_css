@@ -10,7 +10,8 @@
 		<div class="row g1 content-middle margb1">
 			<div class="os-md-3 os-12 text-center">
 				<div class="row">
-					<div class="os-12 padb1"><a href="/openskull.min.css" download class="display-block btn-primary">Download Openskull <small class="em muted"><? echo number_format(filesize("./openskull.min.css") / 1024, 1)."kb"; ?></small></a></div>
+					<div class="os-12 padb1"><a href="https://github.com/blooblahguy/openskull_css" target="_blank" class="display-block btn-secondary">View on Github</a></div>
+					<div class="os-12"><a href="/openskull.min.css" download class="display-block btn-primary">Download .css <small class="em muted"><? echo number_format(filesize("./openskull.min.css") / 1024, 1)."kb"; ?></small></a></div>
 					<!-- <div class="os-12"><a href="/openskull.js" download class="display-block btn-secondary">Download JS</a></div> -->
 				</div>
 			</div>
@@ -22,5 +23,7 @@
 			<p>This page was built entirely with openskull.css. There are no additional demo css rules.</p>
 			<p>A lot of frameworks have advanced demo.css to make things look really nice and presentable, but with this framework you can see what you're getting.</p>
 		</div>
+		<h2>Using Openskull</h2>
+		<p>Being an SCSS library you can either embed it with no variable control with the minified .css file, or you can implement it using a SCSS generator and have full control over the library</p>
 	</div>
 </div>

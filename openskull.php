@@ -11,6 +11,7 @@
 
 	$sheets = array();
 	$sheets[] = "_variables.scss";
+	$sheets[] = "_defaults.scss";
 	$sheets[] = "openskull/_reset.scss";
 	$sheets[] = "openskull/_colors.scss";
 	$sheets[] = "openskull/_buttons.scss";

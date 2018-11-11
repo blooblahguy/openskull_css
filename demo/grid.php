@@ -125,9 +125,9 @@
 		<div class="bord pad2">
 			<div class="gridordering">
 				<div class="row g1">
-					<div class="os order-last"><div class="bg-primary pad1">I'm first in the DOM, last in display.</div></div>
-					<div class="os order-2"><div class="bg-grey pad1"></div></div>
-					<div class="os order-1"><div class="bg-secondary pad1">I'm last in the dom, 1st in display</div></div>
+					<div class="os-12 os-md order-last"><div class="bg-primary pad1">I'm first in the DOM, last in display.</div></div>
+					<div class="os-12 os-md order-2"><div class="bg-grey pad1"></div></div>
+					<div class="os-12 os-md order-1"><div class="bg-secondary pad1">I'm last in the dom, 1st in display</div></div>
 				</div>
 			</div>
 		</div>

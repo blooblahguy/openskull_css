@@ -16,7 +16,7 @@
 		<p>These make automatically pad the sides of your content for smaller devices. You are free to focus on sub-layouts with everything inside of a container.</p>
 		<pre><code target=".containerex"></code></pre>
 	</div>
-	<div class="containerex bord bordl0 bordr0 padtb2 margt2">
+	<div class="containerex bord bordl0 bordr0 pady2 margy2">
 		<div class="section bg-grey">
 			<div class="container margb2">
 				<div class="bg-primary pad1">.container</div>
@@ -80,11 +80,11 @@
 		<pre><code target=".visiblityhelpers"></code></pre>
 		<div class="visiblityhelpers bord pad2 margb2">
 			<div class="row g1">
-				<div class="os hidden display-lg"><div class="bg-primary pad1">Display on large only</div></div>
-				<div class="os hidden display-md"><div class="bg-secondary pad1">Display on medium and above</div></div>
-				<div class="os hidden hidden-lg display-md"><div class="bg-secondary pad1">Display on medium only</div></div>
-				<div class="os hidden-lg"><div class="bg-secondary pad1">Display on medium and below</div></div>
-				<div class="os hidden-md"><div class="bg-dark pad1">Display on small only</div></div>
+				<div class="os-12 os-md hidden display-lg"><div class="bg-primary pad1">Display on large only</div></div>
+				<div class="os-12 os-md hidden display-md"><div class="bg-secondary pad1">Display on medium and above</div></div>
+				<div class="os-12 os-md hidden hidden-lg display-md"><div class="bg-secondary pad1">Display on medium only</div></div>
+				<div class="os-12 os-md hidden-lg"><div class="bg-secondary pad1">Display on medium and below</div></div>
+				<div class="os-12 os-md hidden-md"><div class="bg-dark pad1">Display on small only</div></div>
 			</div>
 		</div>
 	</div>
