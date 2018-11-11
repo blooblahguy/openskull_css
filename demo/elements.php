@@ -102,6 +102,7 @@
 		</div>
 
 		<h4>Pagination</h4>
+		<p>A <kbd>.pagination</kbd> parent will apply the pagination treatment to all children.</p>
 		<div class="pagination row">
 			<a href="#0" class="prev">Prev</a>
 			<a href="#0">1</a>
@@ -112,11 +113,11 @@
 		</div>
 
 		<h3>Messages</h3>
-		
-		<div class="message-success">Message Success</div>
-		<div class="message-warning">Message Warning</div>
-		<div class="message-info">Message Info</div>
-		<div class="message-error">Message Error</div>
+		<p>Simply add the <kbd>.message[-color]</kbd> class to give a user a hinted message.</p>
+		<div class="message-success">.message-success</div>
+		<div class="message-warning">.message-warning</div>
+		<div class="message-info">.message-info</div>
+		<div class="message-error">.message-error</div>
 
 		<hr>
 	</div>
