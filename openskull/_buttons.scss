@@ -1,6 +1,6 @@
 // Buttons
 %btn-base {
-	background: transparent; text-decoration:none; border: 2px solid $grey; border-radius: $border-radius; padding: $g1 $g2; cursor:pointer; text-align:center; box-shadow:none; display:inline-block; color:$black;
+	background: transparent; text-decoration:none; border: 1px solid $grey; padding: $g1 $g2; cursor:pointer; text-align:center; box-shadow:none; display:inline-block; color:$black; font-weight:bold;
 	&:hover, &:focus {text-decoration:none; color: contrast(darken($white, $hover_diff)); background: darken($white, $hover_diff); border-color: darken($grey, $hover_diff);}
 
 	&#{-btn-lg}, &.btn-lg {font-size: 1.303rem; padding: $g2 $g4; }
@@ -12,7 +12,7 @@
 }
 
 @each $name, $color in $system_colors {
-	.btn-#{$name}, input.btn-#{$name} {
+	.btn-#{$name}, input.btn-#{$name}, a.btn-#{$name} {
 		@extend %btn-base;
 		$bg: map-get($color, bg);
 		color: contrast($bg); background: $bg; border-color: darken($bg, $hover_diff);

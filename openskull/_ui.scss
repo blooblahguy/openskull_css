@@ -133,8 +133,7 @@ table.noborder tr {border:none;}
 
 @media (max-width: $viewport-lg) {
 	$menu_width: 200px !important;
-	.wrapper {position: relative; right:0; left: 0;}
-	.wrapper, .header_outer, .os_menu {position: relative; @include prefix(transition, right $animation-speed ease-in-out, left $animation-speed ease-in-out); }
+	.wrapper, .os_menu {position: relative; right:0; left: 0; @include prefix(transition, right $animation-speed ease-in-out, left $animation-speed ease-in-out);}
 	.os_menu_button.open {display: block; }
 	.os_menu {
 		position: fixed; top: 0; height: 100vh; width: $menu_width; max-width: $menu_width; right: -100%; left:auto;
@@ -142,12 +141,13 @@ table.noborder tr {border:none;}
 		a {display:block;}
 	}
 	// Pure CSS hamburger menu, just add #body to body
-	#body:target {
+	#body:target, body.mobile_toggle {
 		.os_menu_button.open {display:none;}
 		.os_menu_button.close {display:block;}
 
+		
+
 		.os_menu {right:0;}
 		.wrapper {right: $menu_width; left:-$menu_width;}
-		.header_outer {right: $menu_width;}
 	}
 }

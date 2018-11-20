@@ -38,7 +38,7 @@ u, .underline {text-decoration:underline;}
 
 // LINKS
 a {color:$link-color; text-decoration: none; }
-a:active, a:hover, a:focus {outline: 0; color: darken($link-color, $hover_diff);}
+a:active, a:hover {outline: 0; color: darken($link-color, $hover_diff);}
 
 // HEADERS
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

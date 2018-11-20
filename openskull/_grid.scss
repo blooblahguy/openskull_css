@@ -71,10 +71,10 @@
 	.g4 > [class*="os#{$name}"] {padding: $g4;}
 
 	// grid dimensions
-	.os#{$name}-min {max-width: 100%;}
 	@for $i from 1 through 12 {
 		.os#{$name}#{-$i} {max-width: (100% / 12) * $i; -ms-flex: 0 0 (100% / 12) * $i; flex: 0 0 (100% / 12) * $i; width: 100%; }
 	}
+	.os#{$name}-min {max-width: 100%; -ms-flex: none; flex: none; width: auto; }
 
 	// margins in breakpoints
 	@for $i from 0 through 4 {
@@ -120,6 +120,6 @@
 	@include grid_sizes('lg', true);
 }
 // Large devices (desktops, 1024px and down)
-@media (max-width: $viewport-lg) {
+@media (max-width: $viewport-lg) and (min-width: $viewport-md) {
 	html {font-size: $font-size-lg}
 }

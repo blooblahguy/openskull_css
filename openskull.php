@@ -14,6 +14,7 @@
 	$sheets[] = "openskull/_forms.scss";
 	$sheets[] = "openskull/_ui.scss";
 	$sheets[] = "openskull/_grid.scss";
+	$sheets[] = "openskull/style.scss";
 
 	// cached updating
 	$update = false;
