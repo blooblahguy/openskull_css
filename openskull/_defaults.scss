@@ -1,7 +1,7 @@
 // Main spacing units
-$line-height: 1.8;
-$header-line-height: 1.5;
-$padding: 0.6rem;
+$line-height: 1.8 !default;
+$header-line-height: 1.5 !default;
+$padding: 0.6rem !default;
 
 /////////////////////////
 // Layout
@@ -13,16 +13,16 @@ $viewport-lg: 64rem !default; // 1024px
 // to make the document jump with an offset
 $anchor-offset: 49px !default;
 
-$g0: 0;
-$g1: $padding * 1;
-$g2: $padding * 2;
-$g3: $padding * 3;
-$g4: $padding * 4;
+$g0: 0 !default;
+$g1: $padding * 1 !default;
+$g2: $padding * 2 !default;
+$g3: $padding * 3 !default;
+$g4: $padding * 4 !default;
 
-$z-bg: -1;
-$z-low: 5;
-$z-medium: 10;
-$z-high: 20;
+$z-bg: -1 !default;
+$z-low: 5 !default;
+$z-medium: 10 !default;
+$z-high: 20 !default;
 
 /////////////////////////
 // Colors
@@ -46,16 +46,16 @@ $green: #22ac73 !default;
 $primary: $blue !default;
 $secondary: $green !default;
 
-$success: $green;
-$info: $light-blue;
-$warning: $orange;
-$error: $red;
+$success: $green !default;
+$info: $light-blue !default;
+$warning: $orange !default;
+$error: $red !default;
 
 $link-color: $blue !default;
 
 $border-radius: 3px !default;
-$hover_diff: 7%;
-$animation-speed: 0.1s;
+$hover_diff: 7% !default;
+$animation-speed: 0.1s !default;
 
 // System
 $system_colors: (
@@ -72,7 +72,7 @@ $system_colors: (
 
 	, grey: (bg: $grey, color: $black)
 	, dark: (bg: $dark, color: $white)
-);
+) !default;
 
 /////////////////////////
 // Typgraphy
@@ -123,3 +123,21 @@ $h6: (
 	, color: inherit
 	, font-weight: 500
 ) !default;
+
+
+// Setting text color based on readibility
+@function contrast($color) {
+	// @return lightness($color);
+	@if (lightness($color) > 65) {
+		@return $text-black; // Lighter backgorund, return dark color
+	} @else {
+		@return $text-white; // Darker background, return light color
+	}
+}
+
+// functions // EX: @include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
+@mixin prefix($prop, $values...) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '-o-', '' {
+		#{$prefix}#{$prop}: $values;
+	}
+}

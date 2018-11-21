@@ -19,21 +19,3 @@ body {color: $font-color; line-height: $line-height; font-weight: $font-weight; 
 // limit objects to document size
 img, canvas, iframe, video, svg, select, textarea {max-width: 100%;}
 svg:not(:root) {overflow: hidden;}
-
-// functions
-// Setting text color based on readibility
-@function contrast($color) {
-	// @return lightness($color);
-	@if (lightness($color) > 65) {
-		@return $black; // Lighter backgorund, return dark color
-	} @else {
-		@return $white; // Darker background, return light color
-	}
-}
-
-// functions // EX: @include prefix(box-shadow, 0 3px 3px rgba(0,0,0,0.05)); 
-@mixin prefix($prop, $values...) {
-	@each $prefix in '-webkit-', '-moz-', '-ms-', '-o-', '' {
-		#{$prefix}#{$prop}: $values;
-	}
-}
