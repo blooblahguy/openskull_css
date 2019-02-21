@@ -33,4 +33,4 @@
 			</a>
 		</div>
 		
-		<div class="main_content" style="padding-top: 45px">
+		<div class="main_content" style="padding-top: 48px">

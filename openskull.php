@@ -1,24 +1,32 @@
 <?php
-	header('Content-Type: text/css');
-
+	// EDIT THESE
+	$out_file = "openskull.min.css";
 
 	$sheets = array();
+	$sheets[] = "openskull/_functions.scss";
 	$sheets[] = "_variables.scss";
-	$sheets[] = "openskull/_defaults.scss";
 	$sheets[] = "openskull/_reset.scss";
 	$sheets[] = "openskull/_colors.scss";
 	$sheets[] = "openskull/_buttons.scss";
 	$sheets[] = "openskull/_typography.scss";
 	$sheets[] = "openskull/_helpers.scss";
-	$sheets[] = "openskull/_borders.scss";
 	$sheets[] = "openskull/_forms.scss";
 	$sheets[] = "openskull/_ui.scss";
 	$sheets[] = "openskull/_grid.scss";
-	$sheets[] = "openskull/style.scss";
+	$sheets[] = "style.scss";
 
-	// cached updating
+
+	// DONT EDIT BELOW
+	header('Content-Type: text/css');
+	ini_set("display_errors", 1);
+	error_reporting(E_ALL);
+
+	// cached updating, check's the changetime on the included $sheets
 	$update = false;
-	$cache_mod = filemtime("openskull.min.css");
+	$cache_mod = filemtime($out_file);
+	if (! $cache_mod) {
+		$fh = fopen($out_file, 'w');
+	}
 	$this_mod = filemtime(__FILE__);
 	foreach ($sheets as $sheet) {
 		if (filemtime($sheet) > $cache_mod || $this_mod > $cache_mod) {
@@ -29,23 +37,22 @@
 
 	use Leafo\ScssPhp\Compiler;
 	if ($update) {
-		require_once 'scssphp/scss.inc.php';
-
-		error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+		require_once('scssphp/scss.inc.php');
 
 		$scss = new Compiler();
 		$scss->setImportPaths('');
 
-		// 1 non-minified for reference
-		$scss->setFormatter('Leafo\ScssPhp\Formatter\Expanded');
-		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
-		file_put_contents("openskull.css", $data);
+		ob_start();
+		foreach($sheets as $s) {
+			require_once($s);
+		}
+		$css_all = ob_get_contents();
+		ob_end_clean();
 
-		// 1 minified
-		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed');
-		$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
-		file_put_contents("openskull.min.css", $data);
+		$scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed'); // minify
+		$data = $scss->compile($css_all);
+		file_put_contents($out_file, $data);
 	}
 
-	include("openskull.min.css");
+	include($out_file);
 ?>

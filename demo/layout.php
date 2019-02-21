@@ -62,7 +62,7 @@
 		<pre><code target=".spacinghelpers"></code></pre>
 		<div class="spacinghelpers bord pad2 margb2">
 			<div class="row">
-				<div class="os-min padr2 bg-primary"><div class="bg-grey" style="width: 140px; height: 100%;"></div></div>
+				<div class="os-min padr2 bg-primary"><div class="bg-secondary" style="width: 140px; height: 100%;"></div></div>
 				<div class="os pad4">
 					<p>Super padded text content</p>
 					<p>Next to an image or resource</p>

@@ -14,11 +14,7 @@
 			<div class="os-md-4 os-6"><a href="#0" class="btn">.btn</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-primary">.btn-primary</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-secondary">.btn-secondary</a></div>
-			<div class="os-md-4 os-6"><a href="#0" class="btn-white">.btn-white</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-blank">.btn-blank</a></div>
-			<div class="os-md-4 os-6"><a href="#0" class="btn-grey">.btn-grey</a></div>
-			<div class="os-md-4 os-6"><a href="#0" class="btn-dark">.btn-dark</a></div>
-			<div class="os-md-4 os-6"><a href="#0" class="btn-black">.btn-black</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-success">.btn-success</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-info">.btn-info</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-warning">.btn-warning</a></div>
@@ -30,9 +26,9 @@
 		<p>Purely HTML tooltips are good way to show additional information on hover or activate states for users. <kbd>[tooltip=""]</kbd> will show a default tooltip on top of the element.</p>
 		<ul>
 			<li><kbd>[tooltip="tooltip example"]</kbd> Populates the tooltip text and display it on top of <div class="btn btn-sm" tooltip="tooltip example">the object</div>.</li>
-			<li>Adding<kbd>[tooltip-right]</kbd> Displays the tooltip on the right of <div class="btn btn-sm" tooltip="tooltip example" tooltip-right>the object</div>.</li>
-			<li>Adding<kbd>[tooltip-bottom]</kbd> Displays the tooltip on the bottom of <div class="btn btn-sm" tooltip="tooltip example" tooltip-bottom>the object</div>.</li>
-			<li>Adding<kbd>[tooltip-left]</kbd> Displays the tooltip on the left of <div class="btn btn-sm" tooltip="tooltip example" tooltip-left>the object</div>.</li>
+			<li>Adding <kbd>[tooltip-right]</kbd> Displays the tooltip on the right of <div class="btn btn-sm" tooltip="tooltip example" tooltip-right>the object</div>.</li>
+			<li>Adding <kbd>[tooltip-bottom]</kbd> Displays the tooltip on the bottom of <div class="btn btn-sm" tooltip="tooltip example" tooltip-bottom>the object</div>.</li>
+			<li>Adding <kbd>[tooltip-left]</kbd> Displays the tooltip on the left of <div class="btn btn-sm" tooltip="tooltip example" tooltip-left>the object</div>.</li>
 		</ul>
 		<h3>Modals</h3>
 		<p>Modals are one of the only parts of this library that are not pure CSS. They can be made to be pure CSS, but you would need to have all of it's content inside of the HTML and hidden and you limit the ability for ajax-loaded content. We do a hybrid installment instead. You can still do pure css / html modals, but in order to expand their functionality you'll need openskull.js as well.</p>

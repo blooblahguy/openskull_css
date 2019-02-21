@@ -12,9 +12,7 @@
 		$colors = array(); 
 		$colors[] = "primary";
 		$colors[] = "secondary";
-		$colors[] = "white";
 		$colors[] = "grey";
-		$colors[] = "dark";
 		$colors[] = "black";
 		$colors[] = "success";
 		$colors[] = "info";
