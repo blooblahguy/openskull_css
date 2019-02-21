@@ -28,11 +28,11 @@
 		</ul>
 		<h3>Color Classes</h3>
 		<p>Once you know the colors, you can prefix any of them with a helper class to modify your content. For instance with <kbd>-primary</kbd>:</p>
+		
 			<div class="message-info"><kbd>.message-[color]</kbd> Creates a message display for the text</div>
-			<div class="pad2 margb1 padl4"><kbd>.text-[color]</kbd> Changes the <span class="text-primary">color of the text</span></div>
-			<div class="pad2 margb1 padl4"><kbd>.bg-[color]</kbd> Changes the <span class="bg-primary">background of the text</span></div>
-			<div class="pad2 margb1 padl4"><kbd>.btn</kbd> Creates the <a href="#0" class="btn">Default Button</a> but <kbd>.btn-[color]</kbd> Creates a <a href="#0" class="btn-primary">Styled Button</a></div>
-			<div class="pad2 margb1 padl4 bord bord-primary"><kbd>.bord</kbd> Creates a grey border but <kbd>.bord-[color]</kbd> creates / changes that border color.</div>
+			<div class="margb1"><kbd>.text-[color]</kbd> Changes the <span class="text-primary">color of the text</span></div>
+			<div class="margb1"><kbd>.bg-[color]</kbd> Changes the <span class="bg-primary">background of the text</span></div>
+			<div class="margb1"><kbd>.btn</kbd> Creates the <a href="#0" class="btn">Default Button</a> but <kbd>.btn-[color]</kbd> Creates a <a href="#0" class="btn-primary">Styled Button</a></div>
 
 		<h3>Customizing</h3>
 		<p>Generally the colors should be able to be left alone, with most developers only changing <kbd>$primary</kbd> to their brand primary, and <kbd>$secondary</kbd> to their brands secondary.</p>

@@ -10,7 +10,8 @@
 		<p>There are few UI elements that are important for the user experience. Here's our take on those elements.</p>
 		<h3>Buttons</h3>
 		<p>Buttons are diverse, sometimes you want them to display inline, other times as fat blocks. For that reason we try and leave the default buttons similar to how the browser intended. You can still make buttons full with with <kbd>.block</kbd> or add padding with the <kbd>.pad[n]</kbd> helpers outlines in Layouts.</p>
-		<div class="row g2 text-center">
+
+		<div class="row g1 content-middle text-center">
 			<div class="os-md-4 os-6"><a href="#0" class="btn">.btn</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-primary">.btn-primary</a></div>
 			<div class="os-md-4 os-6"><a href="#0" class="btn-secondary">.btn-secondary</a></div>
@@ -97,7 +98,7 @@
 			</div>
 		</div>
 
-		<h4>Pagination</h4>
+		<h3>Pagination</h3>
 		<p>A <kbd>.pagination</kbd> parent will apply the pagination treatment to all children.</p>
 		<div class="pagination row">
 			<a href="#0" class="prev">Prev</a>

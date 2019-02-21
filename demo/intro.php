@@ -31,14 +31,13 @@
 
 		<h3>SCSS</h3>
 		<pre><code>
+			@include openskull/_functions.scss;
 			@include _variables.scss;
-			@include _defaults.scss;
 			@include openskull/_reset.scss;
 			@include openskull/_colors.scss;
 			@include openskull/_buttons.scss;
 			@include openskull/_typography.scss;
 			@include openskull/_helpers.scss;
-			@include openskull/_borders.scss;
 			@include openskull/_forms.scss;
 			@include openskull/_ui.scss;
 			@include openskull/_grid.scss;
@@ -47,25 +46,33 @@
 		<h3>Caching</h3>
 		<p>The web should be fast, follow <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank">the 100ms rule</a>. If you automatically parse SCSS in your PHP app, you could do something like the following:</p>
 		<pre><code>
-			header("Content-Type: text/css");
+			$out_file = "openskull.min.css";
 
 			$sheets = array();
+			$sheets[] = "openskull/_functions.scss";
 			$sheets[] = "_variables.scss";
-			$sheets[] = "openskull/_defaults.scss";
 			$sheets[] = "openskull/_reset.scss";
 			$sheets[] = "openskull/_colors.scss";
 			$sheets[] = "openskull/_buttons.scss";
 			$sheets[] = "openskull/_typography.scss";
 			$sheets[] = "openskull/_helpers.scss";
-			$sheets[] = "openskull/_borders.scss";
 			$sheets[] = "openskull/_forms.scss";
 			$sheets[] = "openskull/_ui.scss";
 			$sheets[] = "openskull/_grid.scss";
+			$sheets[] = "style.scss";
 
-			// cached updating
+			// DONT EDIT BELOW
+			header('Content-Type: text/css');
+			ini_set("display_errors", 1);
+
+			// ONLY UPDATE IF CHANGED
 			$update = false;
-			$cache_mod = filemtime("openskull.min.css");
 			$this_mod = filemtime(__FILE__);
+			$cache_mod = filemtime($out_file);
+			if (! $cache_mod) {
+				$fh = fopen($out_file, 'w');
+				$cache_mod = filemtime($out_file);
+			}
 			foreach ($sheets as $sheet) {
 				if (filemtime($sheet) > $cache_mod || $this_mod > $cache_mod) {
 					$update = true;
@@ -73,21 +80,25 @@
 				}
 			}
 
-			use Leafo\ScssPhp\Compiler;
 			if ($update) {
-				require_once "scssphp/scss.inc.php";
+				require_once('scssphp/scss.inc.php');
 
-				error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+				$scss = new Leafo\ScssPhp\Compiler();
+				$scss->setImportPaths('');
 
-				$scss = new Compiler();
-				$scss->setImportPaths("");
+				ob_start();
+				foreach($sheets as $s) {
+					require_once($s);
+				}
+				$css_all = ob_get_contents();
+				ob_end_clean();
 
-				$scss->setFormatter("Leafo\ScssPhp\Formatter\Compressed");
-				$data = $scss->compile("@import \"".ltrim(implode("\";\n@import \"",$sheets),"\";\n")."\";");
-				file_put_contents("openskull.min.css", $data);
+				$scss->setFormatter('Leafo\ScssPhp\Formatter\Compressed'); // minify
+				$data = $scss->compile($css_all);
+				file_put_contents($out_file, $data);
 			}
 
-			include("openskull.min.css");
+			include($out_file);
 		</code></pre>
 	</div>
 </div>

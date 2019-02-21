@@ -26,6 +26,7 @@
 	$cache_mod = filemtime($out_file);
 	if (! $cache_mod) {
 		$fh = fopen($out_file, 'w');
+		$cache_mod = filemtime($out_file);
 	}
 	$this_mod = filemtime(__FILE__);
 	foreach ($sheets as $sheet) {
@@ -35,11 +36,10 @@
 		}
 	}
 
-	use Leafo\ScssPhp\Compiler;
 	if ($update) {
 		require_once('scssphp/scss.inc.php');
 
-		$scss = new Compiler();
+		$scss = new Leafo\ScssPhp\Compiler();
 		$scss->setImportPaths('');
 
 		ob_start();

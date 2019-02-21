@@ -31,4 +31,10 @@
 	}
 }
 
-.btn-blank, .btn-blank:hover {@extend %btn-base; background: none; border:none; color: inherit; }
+.btn-blank {
+	@extend %btn-base; 
+	background: none; border:none; color: inherit;
+	&.btn-blank:hover, &.btn-blank:focus {
+		background: $light-grey;
+	}
+}

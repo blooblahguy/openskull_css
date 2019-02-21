@@ -78,13 +78,14 @@
 
 	&:before { content: ''; background:rgba($background-inverse, .6);}
 	.modal_close {
-		font-size: $g3; position:absolute; top: -$g2; right: -$g2; cursor: pointer; height: $g4; width: $g4; border-radius: 50%; 
+		font-size: $g3; position:absolute; top: -$g2; right: -$g2; cursor: pointer; height: $g4; width: $g4; border-radius: 50%; background: $background-color;
 		&:before, &:after {
 			content: ''; width: 50%; height: 3px; position:absolute; top: 50%; left: 50%; background: $background-inverse; 
 		}
 		&:before {transform: translate(-50%, -50%) rotate(45deg); }
 		&:after {transform: translate(-50%, -50%) rotate(-45deg); }
 		&:hover {
+			background: $background-inverse;
 			&:before, &:after {background: $background-color;}
 		}
 	}

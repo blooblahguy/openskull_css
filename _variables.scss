@@ -8,11 +8,11 @@ $hover-difference: 6%;
 $contrast: 0.15;
 $anchor-offset: 48px;
 
-// BRAND
-$primary: #3493d3; // Primary accent
-$secondary: #3b914e; // Secondary accent
+// BRAND -- accent colors to match your brand
+$primary: #3493d3;
+$secondary: #3b914e;
 
-// I recommend leaving these colors alone
+// HELPER COLORS -- wouldn't recommend changing
 $error: #e74c3c;
 $warning: #f39c12;
 $info: #3493d3;
@@ -23,13 +23,13 @@ $light-grey: rgba(mix($black, $white, 50%), 0.15);
 $grey: rgba(mix($black, $white, 50%), 0.5);
 $dark-grey: rgba(mix($black, $white, 50%), 0.8);
 
-// PAGE
+// PAGE -- you can invert these values to automatically create a dark theme
 $background-color: $white;
 $background-inverse: $black;
 $text-color: $black;
 $text-inverse: $white;
 
-// FORMS
+// FORMS -- wouldn't recommend changing
 $form-input-background: hover-inverse($background-color, $hover-difference);
 $form-border-color: rgba(contrast($background-color, #fff, #000), $contrast);
 
