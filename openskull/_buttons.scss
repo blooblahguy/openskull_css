@@ -2,7 +2,7 @@
 %btn-base {
 	$bg: $primary;
 
-	border:none; background: $bg; text-decoration:none; padding: $g1 $g2; cursor:pointer; text-align:center; box-shadow:none; display: inline-block; color: contrast($bg); font-weight: $font-bold;
+	font: inherit; border:none; background: $bg; text-decoration:none; padding: $g1 $g2; cursor:pointer; text-align:center; box-shadow:none; display: inline-block; color: contrast($bg); font-weight: $font-bold;
 	&:hover, &:focus {
 		$bg: hover($bg);
 

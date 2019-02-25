@@ -15,7 +15,6 @@
 	$sheets[] = "openskull/_grid.scss";
 	$sheets[] = "style.scss";
 
-
 	// DONT EDIT BELOW
 	header('Content-Type: text/css');
 	ini_set("display_errors", 1);
