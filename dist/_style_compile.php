@@ -20,7 +20,7 @@
 
 	use Leafo\ScssPhp\Compiler;
 	if ($update) {
-		require_once('scssphp/scss.inc.php');
+		require_once('../scssphp/scss.inc.php');
 
 		error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
