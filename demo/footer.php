@@ -1,6 +1,6 @@
 		
 		</div> <!-- .main_content -->
-		<div class="footer_outer pad1 bg-black">
+		<div class="footer_outer pad1 bg-dark">
 			<div class="footer container em muted text-right">
 				&copy; <? echo Date("Y"); ?> all rights reserverd &bull; <a href="http://www.gladelynch.com" target="_blank">Glade Lynch</a>
 			</div>

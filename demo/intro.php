@@ -27,7 +27,7 @@
 		<h2>Using Openskull</h2>
 		<p>Being an SCSS library you can either embed it without variable control with the minified .css file, or you can implement it using a SCSS generator and have full control over the library.</p>
 		<h3>Plain CSS</h3>
-		<pre><code><link rel="stylesheet" href="openskull.min.css"></code></pre>
+		<pre><code><?= htmlentities('<link rel="stylesheet" href="openskull.min.css">'); ?></code></pre>
 
 		<h3>SCSS</h3>
 		<pre><code>

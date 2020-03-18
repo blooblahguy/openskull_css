@@ -116,6 +116,5 @@
 		<div class="message-info">.message-info</div>
 		<div class="message-error">.message-error</div>
 
-		<hr>
 	</div>
 </div>

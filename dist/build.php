@@ -1,9 +1,4 @@
 <?php
-	header('Content-Type: text/css');
-
-	ini_set("display_errors", 1);
-	error_reporting(E_ALL);
-
 	// cached updating
 	$update = false;
 	$cache_mod = filemtime($out_file);
@@ -20,7 +15,7 @@
 
 	use Leafo\ScssPhp\Compiler;
 	if ($update) {
-		require_once('../scssphp/scss.inc.php');
+		require '../scssphp/scss.inc.php';
 
 		error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
@@ -29,7 +24,7 @@
 
 		ob_start();
 		foreach($sheets as $s) {
-			require_once($s);
+			require $s;
 		}
 		$css_all = ob_get_contents();
 		ob_end_clean();

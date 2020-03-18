@@ -84,7 +84,7 @@
 				<div class="os-12 os-md hidden display-md"><div class="bg-secondary pad1">Display on medium and above</div></div>
 				<div class="os-12 os-md hidden hidden-lg display-md"><div class="bg-secondary pad1">Display on medium only</div></div>
 				<div class="os-12 os-md hidden-lg"><div class="bg-secondary pad1">Display on medium and below</div></div>
-				<div class="os-12 os-md hidden-md"><div class="bg-dark pad1">Display on small only</div></div>
+				<div class="os-12 os-md hidden-md"><div class="bg-black pad1">Display on small only</div></div>
 			</div>
 		</div>
 	</div>
